@@ -2,3 +2,4 @@ node_modules/
 release/config/*.js
 release/designer/*.js
 release/game/*.js
+release/*.js
