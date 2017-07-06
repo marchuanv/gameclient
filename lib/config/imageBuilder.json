@@ -1,0 +1,26 @@
+[
+	{
+		"file": "../assets/cursor.png",
+		"name": "cursor"
+	},
+	{
+		"file": "../assets/playerScore.png",
+		"name": "playerScore"
+	},
+	{
+		"file": "../assets/scoreboard_heading.png",
+		"name": "scoreboardHeading"
+	},
+	{
+		"file": "../assets/scoreboard.png",
+		"name": "scoreboardBackground"
+	},
+	{
+		"file": "../assets/background.jpg",
+		"name": "flyBackground"
+	},
+	{
+		"file": "../assets/capturePlayer.png",
+		"name": "playerCapture"
+	}
+]

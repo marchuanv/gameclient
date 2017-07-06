@@ -1,0 +1,282 @@
+[
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 1,
+				"name": "play",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 46,
+		"frameWidth": 150,
+		"name": "playButton",
+		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 1,
+				"endIndex": 0,
+				"name": "play",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 46,
+		"frameWidth": 150,
+		"name": "closeButton",
+		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 1,
+				"endIndex": 0,
+				"name": "play",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 46,
+		"frameWidth": 150,
+		"name": "submitButton",
+		"speed": 0
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 168,
+				"name": "play",
+				"start": true,
+				"repeat": false
+			}
+		],
+		"frameHeight": 600,
+		"frameWidth": 800,
+		"name": "preloader",
+		"speed": 0
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 15,
+				"name": "alive",
+				"start": true,
+				"repeat": true
+			},
+			{
+				"startIndex": 16,
+				"endIndex": 21,
+				"name": "dead",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 128,
+		"frameWidth": 128,
+		"name": "fly1",
+		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 15,
+				"name": "alive2",
+				"start": true,
+				"repeat": true
+			},
+			{
+				"startIndex": 16,
+				"endIndex": 21,
+				"name": "dead2",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 128,
+		"frameWidth": 128,
+		"name": "fly2",
+		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 15,
+				"name": "alive3",
+				"start": true,
+				"repeat": true
+			},
+			{
+				"startIndex": 16,
+				"endIndex": 21,
+				"name": "dead3",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 128,
+		"frameWidth": 128,
+		"name": "fly3",
+		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 15,
+				"name": "alive",
+				"start": true,
+				"repeat": true
+			},
+			{
+				"startIndex": 16,
+				"endIndex": 21,
+				"name": "dead",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 128,
+		"frameWidth": 128,
+		"name": "fly4",
+		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 15,
+				"name": "alive",
+				"start": true,
+				"repeat": true
+			},
+			{
+				"startIndex": 16,
+				"endIndex": 21,
+				"name": "dead",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 128,
+		"frameWidth": 128,
+		"name": "fly5",
+		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 15,
+				"name": "alive",
+				"start": true,
+				"repeat": true
+			},
+			{
+				"startIndex": 16,
+				"endIndex": 21,
+				"name": "dead",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 128,
+		"frameWidth": 128,
+		"name": "fly6",
+		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 15,
+				"name": "alive",
+				"start": true,
+				"repeat": true
+			},
+			{
+				"startIndex": 16,
+				"endIndex": 21,
+				"name": "dead",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 128,
+		"frameWidth": 128,
+		"name": "fly7",
+		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 15,
+				"name": "alive",
+				"start": true,
+				"repeat": true
+			},
+			{
+				"startIndex": 16,
+				"endIndex": 21,
+				"name": "dead",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 128,
+		"frameWidth": 128,
+		"name": "fly8",
+		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 15,
+				"name": "alive",
+				"start": true,
+				"repeat": true
+			},
+			{
+				"startIndex": 16,
+				"endIndex": 21,
+				"name": "dead",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 128,
+		"frameWidth": 128,
+		"name": "fly9",
+		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 15,
+				"name": "alive10",
+				"start": true,
+				"repeat": true
+			},
+			{
+				"startIndex": 16,
+				"endIndex": 21,
+				"name": "dead19",
+				"start": false,
+				"repeat": false
+			}
+		],
+		"frameHeight": 128,
+		"frameWidth": 128,
+		"name": "fly10",
+		"speed": 10
+	}
+]

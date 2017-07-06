@@ -1,0 +1,16 @@
+{
+  "name": "designs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "repository": "",
+  "author": "marchuanv@gmail.com",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.2",
+    "js-beautify": "^1.6.12"
+  },
+  "scripts": {
+    "start": "node release.js && node server.js",
+  }
+}

@@ -1,0 +1,298 @@
+<html>
+	<head>
+		<title>Scene State Configuration</title>
+		<link rel="stylesheet" href="../external/bootstrap.min.css">
+		
+<script type="text/javascript" src="..\generated\webfonts.js"></script> 
+<script type="text/javascript" src="..\generated\utils.js"></script> 
+<script type="text/javascript" src="..\generated\phaser.min.js"></script> 
+<script type="text/javascript" src="..\generated\phaser.js"></script> 
+<script type="text/javascript" src="..\generated\jquery.min.js"></script> 
+<script type="text/javascript" src="..\generated\github.min.js"></script> 
+<script type="text/javascript" src="..\generated\factory.js"></script> 
+<script type="text/javascript" src="..\generated\eventHandler.js"></script> 
+<script type="text/javascript" src="..\generated\bootstrap.min.js"></script> 
+<script type="text/javascript" src="..\generated\game\textBuilder.js"></script> 
+<script type="text/javascript" src="..\generated\game\spriteBuilder.js"></script> 
+<script type="text/javascript" src="..\generated\game\scoreboardScene.js"></script> 
+<script type="text/javascript" src="..\generated\game\sceneUserInputEvents.js"></script> 
+<script type="text/javascript" src="..\generated\game\sceneSelector.js"></script> 
+<script type="text/javascript" src="..\generated\game\sceneObjBuilder.js"></script> 
+<script type="text/javascript" src="..\generated\game\sceneManager.js"></script> 
+<script type="text/javascript" src="..\generated\game\preloaderScene.js"></script> 
+<script type="text/javascript" src="..\generated\game\playerScoreProvider.js"></script> 
+<script type="text/javascript" src="..\generated\game\phaserGame.js"></script> 
+<script type="text/javascript" src="..\generated\game\imageBuilder.js"></script> 
+<script type="text/javascript" src="..\generated\game\flyScene.js"></script> 
+<script type="text/javascript" src="..\generated\game\capturePlayerScene.js"></script> 
+<script type="text/javascript" src="..\generated\game\animationBuilder.js"></script> 
+<script type="text/javascript" src="..\generated\designer\textEditor.js"></script> 
+<script type="text/javascript" src="..\generated\designer\phaserCanvasContextMenu.js"></script> 
+<script type="text/javascript" src="..\generated\designer\phaserCanvasButton.js"></script> 
+<script type="text/javascript" src="..\generated\designer\phaserCanvas.js"></script> 
+<script type="text/javascript" src="..\generated\designer\modalWindowTextEditor.js"></script> 
+<script type="text/javascript" src="..\generated\designer\modalWindowTextBox.js"></script> 
+<script type="text/javascript" src="..\generated\designer\modalWindowCheckBox.js"></script> 
+<script type="text/javascript" src="..\generated\designer\modalWindowButton.js"></script> 
+<script type="text/javascript" src="..\generated\designer\modalWindow.js"></script> 
+<script type="text/javascript" src="..\generated\designer\diagramCanvasContextMenu.js"></script> 
+<script type="text/javascript" src="..\generated\designer\diagramCanvasButton.js"></script> 
+<script type="text/javascript" src="..\generated\designer\diagramCanvas.js"></script> 
+<script type="text/javascript" src="..\generated\config\workflowConfig.js"></script> 
+<script type="text/javascript" src="..\generated\config\textBuilderConfig.js"></script> 
+<script type="text/javascript" src="..\generated\config\spriteBuilderConfig.js"></script> 
+<script type="text/javascript" src="..\generated\config\sceneSelectorConfig.js"></script> 
+<script type="text/javascript" src="..\generated\config\phaserGameConfig.js"></script> 
+<script type="text/javascript" src="..\generated\config\loaderscenepreloaderSceneConfig.js"></script> 
+<script type="text/javascript" src="..\generated\config\level7flySceneConfig.js"></script> 
+<script type="text/javascript" src="..\generated\config\level3flySceneConfig.js"></script> 
+<script type="text/javascript" src="..\generated\config\level10flySceneConfig.js"></script> 
+<script type="text/javascript" src="..\generated\config\imageBuilderConfig.js"></script> 
+<script type="text/javascript" src="..\generated\config\animationBuilderConfig.js"></script> 
+	</head>
+	<body>
+		<script type="text/javascript">
+
+			window.onload = function(){
+
+				var sceneSelectorConfig;
+				var workflowConfig;
+				var modalWindowTextEditor;
+				var modalWindowTextBoxUsername;
+				var modalWindowTextBoxPassword;
+				var modalWindowCheckbox;
+				var modalWindow = new ModalWindow();
+				var diagramCanvas = new DiagramCanvas();
+				var phaserCanvas = new PhaserCanvas();
+				var diagramCanvasContextMenu = new DiagramCanvasContextMenu();
+
+				diagramCanvasContextMenu.addMenuItem("Preview Scene",function(){
+					var sceneJSON = modalWindowTextEditor.getValue();
+					var selectedSceneConfig = JSON.parse(sceneJSON);
+					factory(function(_instance){
+						diagramCanvas.hide(false);
+						phaserCanvas.load();
+						setTimeout(function(){
+							_instance.phaserGame(function(_game){
+								sceneJSON = modalWindowTextEditor.getValue();
+								selectedSceneConfig = JSON.parse(sceneJSON);
+								_game.start(selectedSceneConfig.name, selectedSceneConfig.template, function(){
+									var phaserCanvasButton = new PhaserCanvasButton("Back");
+									phaserCanvasButton.subscribe(function onclick(){
+										phaserCanvas.hide();
+										_instance.phaserGame(function(_game){
+											_game.exit();
+											diagramCanvas.show();
+										});
+									});
+								});
+							});
+						},200);
+					});
+				});
+
+				diagramCanvasContextMenu.addMenuItem("Edit Scene Objects",function(){
+
+					var username = modalWindowTextBoxUsername.getValue();
+					var password = modalWindowTextBoxPassword.getValue();
+					var sceneJSON = modalWindowTextEditor.getValue();
+					var selectedSceneConfig = JSON.parse(sceneJSON);
+					var sceneObjId = selectedSceneConfig.name;
+					sceneObjId = sceneObjId.replace(" ","").toLowerCase();
+					sceneObjId = sceneObjId + selectedSceneConfig.template;
+
+					modalWindow.clear();
+					modalWindowTextEditor = new ModalWindowTextEditor("configEditor");
+					modalWindowCheckbox = new ModalWindowCheckBox("Replace with template");
+
+
+					var modalWindowButtonConfig = new ModalWindowButton("Submit",true);
+					getConfigFromGithub(sceneObjId, username, password, function(_sceneConfig){
+
+						getConfigFromGithub("templates/"+selectedSceneConfig.template, username, password, function(_sceneConfigTpl){
+							
+							if (_sceneConfig){
+								modalWindowTextEditor.populate(_sceneConfig);
+							}else{
+								if (!_sceneConfigTpl){
+									throw selectedSceneConfig.template + " template was not found.";
+								}else{
+									modalWindowTextEditor.populate(_sceneConfigTpl);
+								}
+							}
+
+							modalWindowCheckbox.subscribe(function onclick(){
+								if (modalWindowCheckbox.isChecked()){
+									modalWindowTextEditor.populate(_sceneConfigTpl);
+								}else{
+									modalWindowTextEditor.populate(_sceneConfig);
+								}
+							});
+
+							modalWindow.setTitle("Scene Object Config","Edit the scene object configuration.");
+							modalWindow.show();
+							modalWindowButtonConfig.subscribe(function onclick(){
+								var username = modalWindowTextBoxUsername.getValue();
+								var password = modalWindowTextBoxPassword.getValue();
+								if (username && password){
+									var updatedSceneObjConfigJSON = modalWindowTextEditor.getValue();
+									var updatedSceneObjConfig = JSON.parse(updatedSceneObjConfigJSON);
+									sendToGithub(sceneObjId, username, password, updatedSceneObjConfig, function(){
+										var url = "http://"+window.location.host + "/generate";
+										$.post(url, {}, function(data, status){
+									    });
+									});
+								}
+							});
+							setTimeout(function(){
+								modalWindowTextEditor.focus();
+							},1000);
+						});
+					});
+				});
+				diagramCanvasContextMenu.addMenuItem("Edit Scene Config", function(){
+					modalWindow.setTitle("State Config","Edit the configuration for the selected state.");
+					modalWindow.show();
+					setTimeout(function	(){
+						modalWindowTextEditor.focus();
+					},200);
+				});
+
+				diagramCanvas.nodeMoveStart = function(){
+					diagramCanvasContextMenu.hide();
+				};
+				diagramCanvas.nodeMoveEnd = function(){
+					moveToMouse();
+				};
+				diagramCanvas.selectedNode = function(_selectedNode){
+					moveToMouse();
+					setTimeout(function(){
+						var existingConfig = null;
+						enumerate(sceneSelectorConfig, this, function(sceneSelectorConfigItem){
+							if (_selectedNode.Id == sceneSelectorConfigItem.Id) {
+								existingConfig = sceneSelectorConfigItem;
+							}
+						},function(){
+							if (!existingConfig){
+								existingConfig = {
+									Id: _selectedNode.Id,
+									name:_selectedNode.text,
+									template:""
+								};
+								sceneSelectorConfig.push(existingConfig);
+							}
+
+							modalWindow.clear();
+							modalWindowTextEditor = new ModalWindowTextEditor("configEditor");
+							modalWindowCheckbox = new ModalWindowCheckBox("Save All");
+							var modalWindowButtonConfig = new ModalWindowButton("Submit",true);
+							modalWindowButtonConfig.subscribe(function onclick(){
+								var isSelected = modalWindowCheckbox.isChecked();
+								setSceneConfig();
+								if (isSelected){
+									var username = modalWindowTextBoxUsername.getValue();
+									var password = modalWindowTextBoxPassword.getValue();
+									if (username && password){
+										var prioritisedNodeArray = [];
+										var links = [];
+										var priority = 0;
+										diagramCanvas.getNodeLinks(function(nodeLinks){
+											diagramCanvas.getNodes(function(nodes){
+												var _config = {
+													links: nodeLinks, 
+													nodes: nodes
+												};
+												sendToGithub("workflow", username, password, _config, function(){
+													sendToGithub("sceneSelector", username, password, sceneSelectorConfig, function(){
+													});
+												});
+											});
+										});
+									}
+								}
+							});
+							modalWindowTextEditor.populate(existingConfig);
+		
+						});
+					},100);	
+				};
+				diagramCanvas.nodeLostFocus = function(){
+					setSceneConfig();
+					diagramCanvasContextMenu.hide();
+				};
+
+				diagramCanvas.nodeDeleted = function(deletedNode){
+					diagramCanvasContextMenu.hide();
+					enumerate(sceneSelectorConfig, this, function(sceneSelectorConfigItem, cbCondition, cbRemove){
+						if (deletedNode.Id == sceneSelectorConfigItem.Id){
+							cbRemove();
+						}
+						enumerate(workflowConfig.nodes, this, function(_node, cbCondition2, cbRemoveNode){
+							if (deletedNode.Id == _node.Id ){
+								cbRemoveNode();
+							}
+						});
+						enumerate(workflowConfig.links, this, function(_link, cbCondition, cbRemoveLink){
+							if (_link.node == deletedNode.Id){
+								cbRemoveLink();
+							} else if (_link.nodeA != deletedNode.Id && _link.nodeB == deletedNode.Id) {
+								cbRemoveLink();
+							} else if (_link.nodeA == deletedNode.Id && _link.nodeB != deletedNode.Id) {
+								cbRemoveLink();
+							}
+						});
+						editor.clear();
+					});
+				};
+
+				function moveToMouse(){
+					var mousePos = diagramCanvas.getMousePos();
+					diagramCanvasContextMenu.moveToMouse(mousePos.x+42, mousePos.y-30);
+				}
+				function setSceneConfig(){
+					if (modalWindowTextEditor){
+						var configJSON = modalWindowTextEditor.getValue();
+						if (configJSON.length > 5){
+							var config = JSON.parse(configJSON);
+							enumerate(sceneSelectorConfig, this, function(sceneSelectorConfigItem){
+								if (config.Id == sceneSelectorConfigItem.Id) {
+									for (var prop in sceneSelectorConfigItem){
+										sceneSelectorConfigItem[prop] = config[prop];
+									};
+								}
+							});
+						}
+					}
+				};
+
+				function drawDiagrams(){
+					var username = modalWindowTextBoxUsername.getValue();
+					var password = modalWindowTextBoxPassword.getValue();
+
+					getConfigFromGithub("workflow", username, password, function(_workflowConfig){
+						workflowConfig = _workflowConfig;
+						diagramCanvas.drawNodes(workflowConfig.nodes);
+						diagramCanvas.drawLinks(workflowConfig.links);
+						getConfigFromGithub("sceneSelector", username, password, function(_sceneSelectorConfig){
+							sceneSelectorConfig = _sceneSelectorConfig;
+						});	
+					});
+					modalWindowTextEditor = new ModalWindowTextEditor("configEditor");
+				};
+
+				var modalWindowButtonGithub = new ModalWindowButton("Submit",true);
+				modalWindowButtonGithub.subscribe(function onclick(){
+					drawDiagrams();
+				});
+				var username = "Marchuanv";
+				modalWindowTextBoxUsername = new ModalWindowTextBox("githubUsername");
+				modalWindowTextBoxUsername.setValue(username);
+				modalWindowTextBoxPassword = new ModalWindowTextBox("githubPassword", true);
+				modalWindow.setTitle("Enter Github username and password (Optional)",
+								 "Save configuration changes to a branch in Github.");
+				modalWindow.show();
+				
+			};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+[
+    {
+        "Id": "8e78a92b-ce35-4c0e-6397-2a24fa428ca5",
+        "name": "Loader Scene",
+        "template": "preloaderScene"
+    },
+    {
+        "Id": "dd676895-49be-4865-c757-7fc4839871a3",
+        "name": "Capture Player Scene",
+        "template": "capturePlayerScene"
+    },
+    {
+        "Id": "526a0b38-8e72-42b0-377f-9524912c06ad",
+        "name": "Scoreboard Scene",
+        "template": "scoreboardScene"
+    },
+    {
+        "Id": "89692787-542e-45cd-eeff-756545c09c05",
+        "name": "level2",
+        "template": "flyScene"
+    },
+    {
+        "Id": "9080b619-827f-4ebc-ad1b-31b65b816cf5",
+        "name": "level3",
+        "template": "flyScene"
+    },
+    {
+        "Id": "9bf46a56-7961-4953-940e-910ced09788b",
+        "name": "level4",
+        "template": "flyScene"
+    },
+    {
+        "Id": "5b1a32f2-c16f-4c89-5da0-50312470274f",
+        "name": "level5",
+        "template": "flyScene"
+    },
+    {
+        "Id": "f9300dbc-c145-4699-8571-70dd7984d094",
+        "name": "level6",
+        "template": "flyScene"
+    },
+    {
+        "Id": "4bae7b23-3556-4174-67ba-e251528beb42",
+        "name": "level7",
+        "template": "flyScene"
+    },
+    {
+        "Id": "a2d861e9-2cac-4015-b8aa-3cba1e18d105",
+        "name": "level8",
+        "template": "flyScene"
+    },
+    {
+        "Id": "49d0482f-3cd8-4e03-1e36-3658e3b56339",
+        "name": "level9",
+        "template": "flyScene"
+    },
+    {
+        "Id": "bbd753f6-974a-4851-ab71-474749095975",
+        "name": "level10",
+        "template": "flyScene"
+    },
+    {
+        "Id": "755f4473-0341-4345-f1bf-72222ada38de",
+        "name": "level1",
+        "template": "flyScene"
+    }
+]
