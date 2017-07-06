@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser')
-var common = require('./lib/utils.js');
+var common = require('./release/utils.js');
 
 var app = express();
 var port = process.env.PORT || 3000;
