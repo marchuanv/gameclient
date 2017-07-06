@@ -4,23 +4,23 @@ var beautify = require('js-beautify').js_beautify;
 var libDir = __dirname+"/lib";
 var extLib = __dirname+"/external";
 var assets = __dirname+"/assets";
-var generatedDir = __dirname + "/release";
+var releaseDir = __dirname + "/release";
 
 console.log();
 console.log('----------------------< CLEANUP >---------------------');
-common.enumerateDir(generatedDir, ".js", function (resolvedPath) {
+common.enumerateDir(releaseDir, ".js", function (resolvedPath) {
 	console.log("removing ",resolvedPath);
 	common.removeFile(resolvedPath);
 },function complete(){
 },function fail(){
 });
-common.enumerateDir(generatedDir, ".json", function (resolvedPath) {
+common.enumerateDir(releaseDir, ".json", function (resolvedPath) {
 	console.log("removing ",resolvedPath);
 	common.removeFile(resolvedPath);
 },function complete(){
 },function fail(){
 });
-common.enumerateDir(generatedDir, ".html", function (resolvedPath) {
+common.enumerateDir(releaseDir, ".html", function (resolvedPath) {
 	console.log("removing ",resolvedPath);
 	common.removeFile(resolvedPath);
 },function complete(){
@@ -38,7 +38,7 @@ common.enumerateDir(libDir, ".js", function item (jsResolvedPath) {
 	if (!isSceneTemplate){
 		common.readFile(jsResolvedPath, function complete(data){ //DO JS FILES
 			var newData = data;
-			var releaseFilePath = jsResolvedPath.replace("lib","generated");
+			var releaseFilePath = jsResolvedPath.replace("lib","release");
 			if (releaseFilePath.indexOf("game") >= 0){
 				var startExp = '/*[';
 				var endExp = ']*/';
@@ -83,7 +83,7 @@ common.enumerateDir(libDir, ".js", function item (jsResolvedPath) {
 			isSceneTemplate = true;
 		}
 		if (!isSceneTemplate){
-			var releaseFilePath = jsonResolvedPath.replace("lib","generated");
+			var releaseFilePath = jsonResolvedPath.replace("lib","release");
 			var functionName = common.getFileName(releaseFilePath);
 			functionName = functionName.replace(".json","Config");
 			releaseFilePath = releaseFilePath.replace(".json","Config.js");
@@ -101,7 +101,7 @@ common.enumerateDir(libDir, ".js", function item (jsResolvedPath) {
 		console.log();
 		console.log('----------------------< GENERATE EXTERNAL LIBRARIES >---------------------');
 		common.enumerateDir(extLib, ".js", function (jsResolvedPath) {
-			var releaseFilePath = jsResolvedPath.replace("external","generated");
+			var releaseFilePath = jsResolvedPath.replace("external","release");
 			common.readFile(jsResolvedPath, function(jsFileData){
 				common.saveFile(releaseFilePath, jsFileData, function saved(){
 					console.log(releaseFilePath + " was created.");
@@ -111,7 +111,7 @@ common.enumerateDir(libDir, ".js", function item (jsResolvedPath) {
 			});
 
 			common.enumerateDir(extLib, ".css", function (jsResolvedPath) {
-				var releaseFilePath = jsResolvedPath.replace("external","generated");
+				var releaseFilePath = jsResolvedPath.replace("external","release");
 				common.readFile(jsResolvedPath, function(jsFileData){
 					common.saveFile(releaseFilePath, jsFileData, function saved(){
 						console.log(releaseFilePath + " was created.");
@@ -126,12 +126,12 @@ common.enumerateDir(libDir, ".js", function item (jsResolvedPath) {
 			console.log();
 			console.log('----------------------< GENERATING INDEX.HTML >---------------------');
 			common.enumerateDir(libDir, ".html", function (jsonResolvedPath) {
-				var releaseFilePath = jsonResolvedPath.replace("lib","generated");
+				var releaseFilePath = jsonResolvedPath.replace("lib","release");
 				common.readFile(jsonResolvedPath, function(htmlStr){
 					var newHtmlStr = htmlStr;
-					common.enumerateDir(generatedDir, ".js", function (resolvedJSPath) {
+					common.enumerateDir(releaseDir, ".js", function (resolvedJSPath) {
 						if (resolvedJSPath.indexOf("server.js") == -1){
-							var relativePath = path.relative("letfly", resolvedJSPath);
+							var relativePath = path.relative("designs", resolvedJSPath);
 							newHtmlStr = newHtmlStr.replace("[script]",'\r\n<script type="text/javascript" src="'+relativePath+'"></script> [script]');
 							console.log("adding js script",resolvedJSPath);
 						}

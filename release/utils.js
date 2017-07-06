@@ -259,10 +259,10 @@ function getConfigFromGithub(configName, username, password, cbDone){
 	   password: password
 	});
 
-	var repo = gh.getRepo(username, "letfly");
+	var repo = gh.getRepo(username, "designs");
 	var path = "lib/config/"+configName+".json";
 
-	repo.getContents('refs/heads/designer', path, true, function(http){
+	repo.getContents('refs/heads/master', path, true, function(http){
 		if (http && http.response && http.response.status == 403){
 			throw http.response.data.message;
 		}
