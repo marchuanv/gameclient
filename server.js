@@ -26,13 +26,17 @@ function deleteRoute(url) {
 }
 
 app.get('/', function(req, res) {
+	require("./release.js");
 	setTimeout(function(){
 		res.status(200).sendFile(release+"/index.html");
 	},2000);
 });
 
 app.post('/release', function(req, res) {
-	res.status(200).send({message: "All good"});
+	require("./release.js");
+	setTimeout(function(){
+		res.status(200).send({message: "All good"});
+	},2000);
 });
 
 app.listen(port, function () {
