@@ -1,4 +1,4 @@
-var common = require('./release/utils.js');
+var common = require('./lib/utils.js');
 var path = require('path');
 var beautify = require('js-beautify').js_beautify;
 var libDir = __dirname+"/lib";
