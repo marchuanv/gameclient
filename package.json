@@ -5,6 +5,9 @@
   "main": "",
   "repository": "",
   "author": "marchuanv@gmail.com",
+  "engines" : { 
+    "node" : ">=6.11" 
+  },
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.2",
