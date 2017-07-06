@@ -11,6 +11,6 @@
     "js-beautify": "^1.6.12"
   },
   "scripts": {
-    "start": "node release.js && node server.js",
+    "start": "node release.js && node server.js"
   }
 }
