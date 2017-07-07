@@ -19,6 +19,14 @@
 				var diagramCanvas = new DiagramCanvas();
 				var phaserCanvas = new PhaserCanvas();
 				var diagramCanvasContextMenu = new DiagramCanvasContextMenu();
+				var diagramCanvasPublishButton = new DiagramCanvasButton("Publish");
+
+				diagramCanvasPublishButton.subscribe(function onclick(){
+					var url = "/publish";
+					$.get(url, function(data){
+						
+					});		
+				});
 
 				diagramCanvasContextMenu.addMenuItem("Preview Scene",function(){
 					var sceneJSON = modalWindowTextEditor.getValue();
@@ -92,9 +100,7 @@
 									var updatedSceneObjConfigJSON = modalWindowTextEditor.getValue();
 									var updatedSceneObjConfig = JSON.parse(updatedSceneObjConfigJSON);
 									sendToGithub(sceneObjId, username, password, updatedSceneObjConfig, function(){
-										var url = "http://"+window.location.host + "/generate";
-										$.post(url, {}, function(data, status){
-									    });
+										
 									});
 								}
 							});

@@ -5,13 +5,14 @@
   "main": "",
   "repository": "",
   "author": "marchuanv@gmail.com",
-  "engines" : { 
-    "node" : ">=8.0.0" 
+  "engines": {
+    "node": ">=8.0.0"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.2",
-    "js-beautify": "^1.6.12"
+    "js-beautify": "^1.6.12",
+    "uglify-js": "^3.0.23"
   },
   "scripts": {
     "start": "node server.js"
