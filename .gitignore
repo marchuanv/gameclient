@@ -3,4 +3,6 @@ release/config/*.js
 release/designer/*.js
 release/game/*.js
 release/*.*
-downloads/*.*
+downloads/*.js
+downloads/*.zip
+downloads/*.archive
