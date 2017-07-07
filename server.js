@@ -9,18 +9,19 @@ var port = process.env.PORT || 3000;
 var external = path.resolve("/letfly",__dirname+"/external");
 var assets = path.resolve("/letfly",__dirname+"/assets");
 var releaseDir = path.resolve("/letfly",__dirname+"/release");
+var publishDir = path.resolve("/letfly",__dirname+"/publish");
 
 app.use(bodyParser.json());
 app.use("/external", express.static(external));
 app.use("/assets", express.static(assets));
 app.use("/release", express.static(releaseDir));
+app.use("/publish", express.static(publishDir));
 
-app.get(/^\/publish$/igm, function(req, res) {
-	release.publish(function(publishData){
-		res.status(200).send({
-			message: "All good", 
-			publish: publishData
-		});
+app.get(/^\/createPublish$/igm, function(req, res) {
+	release.publish(function(){
+		setTimeout(function(){
+			res.status(200).sendFile(publishDir+"/index.html");
+		},2000);
 	},function fail(err){
 		console.log("ERROR: ",err);
 	});
@@ -29,7 +30,7 @@ app.get(/^\/publish$/igm, function(req, res) {
 app.get(/^\/$/igm, function(req, res) {
 	release.create();
 	setTimeout(function(){
-		res.status(200).sendFile(releaseDir+"/index.html");
+		res.status(200).sendFile(releaseDir+"/designer.html");
 	},2000);
 });
 

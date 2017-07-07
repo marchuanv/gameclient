@@ -10,12 +10,13 @@ var releaseDir = __dirname + "/release";
 var publishDir = __dirname + "/publish";
 
 function compress(fileName, jsCode){
-	var result  = UglifyJS.minify(jsCode); // parse code and get the initial AST
-	if (result.error){
-		throw "Tried to compress " + fileName +" but resulted in error: "+ result.error;
-	}else{
-		return result.code // compressed code here
-	}
+	return jsCode;
+	// var result  = UglifyJS.minify(jsCode); // parse code and get the initial AST
+	// if (result.error){
+	// 	throw "Tried to compress " + fileName +" but resulted in error: "+ result.error;
+	// }else{
+	// 	return result.code // compressed code here
+	// }
 };
 
 function Release(){
@@ -40,6 +41,7 @@ function Release(){
 		},function complete(){
 		},function fail(){
 		});
+
 
 		console.log();
 		console.log('----------------------< GENERATING JS FILES >---------------------');
@@ -141,8 +143,10 @@ function Release(){
 				},function complete(){
 					console.log();
 					console.log('----------------------< GENERATING INDEX.HTML >---------------------');
-					common.enumerateDir(libDir, ".html", function (jsonResolvedPath) {
+					common.enumerateDir(libDir, ".tpl.html", function (jsonResolvedPath) {
+						
 						var releaseFilePath = jsonResolvedPath.replace("lib","release");
+						releaseFilePath = releaseFilePath.replace(".tpl","");
 						common.readFile(jsonResolvedPath, function(htmlStr){
 							var newHtmlStr = htmlStr;
 							common.enumerateDir(releaseDir, ".js", function (resolvedJSPath) {
@@ -175,21 +179,75 @@ function Release(){
 	};
 	this.publish = function(cbComplete, cbFail){
 
+		console.log();
+		console.log('----------------------< CLEANUP >---------------------');
+
+		common.enumerateDir(publishDir, ".js", function (resolvedPath) {
+			console.log("removing ",resolvedPath);
+			common.removeFile(resolvedPath);
+		},function complete(){
+		},function fail(){
+		});
+		common.enumerateDir(publishDir, ".json", function (resolvedPath) {
+			console.log("removing ",resolvedPath);
+			common.removeFile(resolvedPath);
+		},function complete(){
+		},function fail(){
+		});
+		common.enumerateDir(publishDir, ".html", function (resolvedPath) {
+			console.log("removing ",resolvedPath);
+			common.removeFile(resolvedPath);
+		},function complete(){
+		},function fail(){
+		});
+
 		console.log('----------------------< STARTING PUBLISH >---------------------');
 		var compressedJs;
 		common.enumerateDir(releaseDir, ".js", function (jsResolvedPath) {
-			if (jsResolvedPath.indexOf(".min.") == -1){
-				common.readFile(jsResolvedPath, function(jsScript){
-					if (jsScript){
-						compressedJs += compress(jsResolvedPath, jsScript);
-					}
-				}, cbFail);
+			if (jsResolvedPath.indexOf("designer") == -1 && jsResolvedPath.indexOf("github") == -1){
+				if (jsResolvedPath.indexOf(".min.") == -1 ){
+					common.readFile(jsResolvedPath, function(jsScript){
+						if (jsScript){
+							compressedJs += compress(jsResolvedPath, jsScript);
+						}
+					}, cbFail);
+				}else{
+					var fileName = common.getFileName(jsResolvedPath);
+					common.copyFile(jsResolvedPath, publishDir + "/" + fileName);
+				}
 			}
 		},function complete(){
 			var releaseFilePath = publishDir + "/game.min.js";
+			compressedJs = compressedJs.replace("undefinedfunction","function");
 			common.saveFile(releaseFilePath, compressedJs, function saved(){
 				console.log(releaseFilePath + " was created.");
-				cbComplete();
+				console.log();
+				console.log('----------------------< GENERATING INDEX.HTML FOR PUBLISH >---------------------');
+				common.enumerateDir(libDir, "index.tpl.html", function (jsonResolvedPath) {
+					var htmlReleaseFilePath = jsonResolvedPath.replace("lib","publish");
+					var fileName = common.getFileName(jsonResolvedPath);
+					htmlReleaseFilePath = htmlReleaseFilePath.replace(fileName,"index.html");
+					common.readFile(jsonResolvedPath, function(htmlStr){
+						var newHtmlStr = htmlStr;
+						common.enumerateDir(releaseDir, ".min.js", function (resolvedJSPath) {
+							if (resolvedJSPath.indexOf("github") == -1){
+								var fileName = common.getFileName(resolvedJSPath);
+								newHtmlStr = newHtmlStr.replace("[script]",'\r\n<script type="text/javascript" src="'+fileName+'"></script> [script]');
+								console.log("adding js script",resolvedJSPath);
+							}
+						}, function complete(){
+							newHtmlStr = newHtmlStr.replace("[script]",'\r\n<script type="text/javascript" src="game.min.js"></script> [script]');
+							newHtmlStr = newHtmlStr.replace("[script]","");
+							common.saveFile(htmlReleaseFilePath, newHtmlStr, function saved(){
+								console.log(htmlReleaseFilePath + " was created.");
+								cbComplete();
+							}, cbFail);
+						}, function fail(err){
+							console.log("Error:",err);
+						});
+					}, cbFail);
+				},function complete(){
+				}, cbFail);
 			},cbFail);
 		},cbFail);
 	};
