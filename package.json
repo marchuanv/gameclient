@@ -6,7 +6,7 @@
   "repository": "",
   "author": "marchuanv@gmail.com",
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=6.9.5"
   },
   "dependencies": {
     "archiver": "^2.0.0",
