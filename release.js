@@ -8,6 +8,7 @@ var extLib = __dirname+"/external";
 var assets = __dirname+"/assets";
 var releaseDir = __dirname + "/release";
 var publishDir = __dirname + "/publish";
+var downloadsDir = __dirname + "/downloads";
 
 function compress(fileName, jsCode){
 	return jsCode;
@@ -177,7 +178,7 @@ function Release(){
 		}, function fail(){
 		});
 	};
-	this.publish = function(cbComplete, cbFail){
+	this.publish = function(publishFileName, cbComplete, cbFail){
 
 		console.log();
 		console.log('----------------------< CLEANUP >---------------------');
@@ -195,6 +196,12 @@ function Release(){
 		},function fail(){
 		});
 		common.enumerateDir(publishDir, ".html", function (resolvedPath) {
+			console.log("removing ",resolvedPath);
+			common.removeFile(resolvedPath);
+		},function complete(){
+		},function fail(){
+		});
+		common.enumerateDir(publishDir, ".zip", function (resolvedPath) {
 			console.log("removing ",resolvedPath);
 			common.removeFile(resolvedPath);
 		},function complete(){
@@ -240,11 +247,13 @@ function Release(){
 							newHtmlStr = newHtmlStr.replace("[script]","");
 							common.saveFile(htmlReleaseFilePath, newHtmlStr, function saved(){
 								console.log(htmlReleaseFilePath + " was created.");
-								cbComplete();
+								console.log('----------------------< GENERATING PUBLISH ZIP FILE >---------------------');
+								common.zipFile(publishDir, downloadsDir+"/"+publishFileName,function complete(){
+									console.log('----------------------< ZIP FILE GENERATED >---------------------');
+									cbComplete(downloadsDir+"/"+publishFileName);
+								},cbFail);
 							}, cbFail);
-						}, function fail(err){
-							console.log("Error:",err);
-						});
+						}, cbFail);
 					}, cbFail);
 				},function complete(){
 				}, cbFail);

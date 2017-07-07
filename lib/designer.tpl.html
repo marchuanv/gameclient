@@ -22,10 +22,10 @@
 				var diagramCanvasPublishButton = new DiagramCanvasButton("Publish");
 
 				diagramCanvasPublishButton.subscribe(function onclick(){
-					var url = "/createPublish";
-					$.get(url, function(data){
-						
-					});		
+					var url = "/publish?fileName=letfly.zip";
+					$.post(url, function(){
+						window.location.href = "/downloads/letfly.zip";
+					});
 				});
 
 				diagramCanvasContextMenu.addMenuItem("Preview Scene",function(){

@@ -6,22 +6,17 @@ var release = require("./release.js");
 var app = express();
 var port = process.env.PORT || 3000;
 
-var external = path.resolve("/letfly",__dirname+"/external");
-var assets = path.resolve("/letfly",__dirname+"/assets");
 var releaseDir = path.resolve("/letfly",__dirname+"/release");
-var publishDir = path.resolve("/letfly",__dirname+"/publish");
 
 app.use(bodyParser.json());
-app.use("/external", express.static(external));
-app.use("/assets", express.static(assets));
-app.use("/release", express.static(releaseDir));
-app.use("/publish", express.static(publishDir));
+app.use("/external", express.static("external"));
+app.use("/assets", express.static("assets"));
+app.use("/release", express.static("release"));
+app.use("/downloads", express.static("downloads"));
 
-app.get(/^\/createPublish$/igm, function(req, res) {
-	release.publish(function(){
-		setTimeout(function(){
-			res.status(200).sendFile(publishDir+"/index.html");
-		},2000);
+app.post(/^\/publish$/igm, function(req, res) {
+	release.publish(req.query.fileName, function(filePath){
+		res.status(200).send();
 	},function fail(err){
 		console.log("ERROR: ",err);
 	});
