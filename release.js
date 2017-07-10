@@ -45,8 +45,8 @@ function Release(){
 
 
 		console.log();
-		console.log('----------------------< GENERATING JS FILES >---------------------');
-		common.enumerateDir(libDir, ".js", function item (jsResolvedPath) {
+		console.log('----------------------< GENERATING INTERNAL LIBRARIES >---------------------');
+		common.enumerateDir(libDir, ".js,.css", function item (jsResolvedPath) {
 
 			var isSceneTemplate = false;
 			if (jsResolvedPath.indexOf("templates") >= 0 && jsResolvedPath.endsWith("Scene.js") >= 0){

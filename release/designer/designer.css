@@ -1,0 +1,53 @@
+body {
+  height: 99%;
+  width: 99%;
+}
+.diagramContainer {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.diagramHeader {
+	height: 5%;
+	width: 100%;
+	position: relative;
+}
+
+.diagramBody {
+	height: 90%;
+	width: 100%;
+	position: relative;
+}
+
+.diagramFooter {
+	height: 5%;
+	width: 100%;
+	position: relative;
+}
+
+.diagramCanvas {
+	height: 90%;
+	width: 100%;
+	position: relative;
+}
+
+.diagramCanvasButton {
+	height: 100%;
+	width: 10%;
+	position: relative;
+}
+
+.diagramCanvasContextMenu {
+	height: 300px;
+	width: 400px;
+	position: absolute;
+	float: left;
+	left: -150;
+	top: -150;
+}
+.diagramCanvasContextMenuItem {
+	height: 10%;
+	width: 10%;
+	position: relative;
+}
