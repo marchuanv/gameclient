@@ -39,15 +39,17 @@ body {
 }
 
 .diagramCanvasContextMenu {
-	height: 300px;
-	width: 400px;
+	height: 1px;
+	width: 1px;
 	position: absolute;
-	float: left;
-	left: -150;
-	top: -150;
+	top: 200px;
+	left: 200px;
+
 }
 .diagramCanvasContextMenuItem {
-	height: 10%;
-	width: 10%;
-	position: relative;
+	width: 100px; 
+	height: 100px;
+	position: absolute;
+	border-radius: 50%;
+	white-space:normal;
 }

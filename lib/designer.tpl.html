@@ -119,6 +119,8 @@
 					},200);
 				});
 
+				diagramCanvasContextMenu.show();
+
 				diagramCanvas.nodeMoveStart = function(){
 					diagramCanvasContextMenu.hide();
 				};
@@ -207,8 +209,8 @@
 				};
 
 				function moveToMouse(){
-					var mousePos = diagramCanvas.getMousePos();
-					diagramCanvasContextMenu.moveToMouse(mousePos.x+42, mousePos.y-30);
+					diagramCanvasContextMenu.centreToMouse();
+					diagramCanvasContextMenu.show();
 				}
 				function setSceneConfig(){
 					if (modalWindowTextEditor){
