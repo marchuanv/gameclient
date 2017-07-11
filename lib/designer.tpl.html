@@ -117,6 +117,7 @@
 						});
 					});
 				});
+
 				diagramCanvasContextMenu.addMenuItem("Edit Scene Config", function(){
 					modalWindow.setTitle("State Config","Edit the configuration for the selected state.");
 					modalWindow.show();
@@ -190,7 +191,6 @@
 					setSceneConfig();
 					diagramCanvasContextMenu.hide();
 				};
-
 				diagramCanvas.nodeDeleted = function(deletedNode){
 					diagramCanvasContextMenu.hide();
 					enumerate(sceneSelectorConfig, this, function(sceneSelectorConfigItem, cbCondition, cbRemove){
@@ -230,7 +230,6 @@
 						}
 					}
 				};
-
 				function drawDiagrams(){
 					var username = modalWindowTextBoxUsername.getValue();
 					var password = modalWindowTextBoxPassword.getValue();
@@ -257,7 +256,6 @@
 				modalWindow.setTitle("Enter Github username and password (Optional)",
 								 "Save configuration changes to a branch in Github.");
 				modalWindow.show();
-				
 			};
 		</script>
 	</body>
