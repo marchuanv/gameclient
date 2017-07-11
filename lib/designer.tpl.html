@@ -21,6 +21,19 @@
 				var phaserCanvas = new PhaserCanvas();
 				var diagramCanvasContextMenu = new DiagramCanvasContextMenu();
 				var diagramCanvasPublishButton = new DiagramCanvasButton("Publish");
+				var phaserCanvasButton = new PhaserCanvasButton("Close");
+				phaserCanvasButton.hide();
+
+				phaserCanvasButton.subscribe(function onclick(){
+					factory(function(_instance){
+						_instance.phaserGame(function(_game){
+							_game.exit();
+							diagramCanvas.show();
+							phaserCanvas.hide();
+							phaserCanvasButton.hide();
+						});
+					});
+				});
 
 				diagramCanvasPublishButton.subscribe(function onclick(){
 					var url = "/publish?fileName=letfly.zip";
@@ -34,20 +47,13 @@
 					var selectedSceneConfig = JSON.parse(sceneJSON);
 					factory(function(_instance){
 						diagramCanvas.hide(false);
-						phaserCanvas.load();
 						setTimeout(function(){
 							_instance.phaserGame(function(_game){
 								sceneJSON = modalWindowTextEditor.getValue();
 								selectedSceneConfig = JSON.parse(sceneJSON);
 								_game.start(selectedSceneConfig.name, selectedSceneConfig.template, function(){
-									var phaserCanvasButton = new PhaserCanvasButton("Back");
-									phaserCanvasButton.subscribe(function onclick(){
-										phaserCanvas.hide();
-										_instance.phaserGame(function(_game){
-											_game.exit();
-											diagramCanvas.show();
-										});
-									});
+									phaserCanvas.show();
+									phaserCanvasButton.show();
 								});
 							});
 						},200);
@@ -119,16 +125,17 @@
 					},200);
 				});
 
-				diagramCanvasContextMenu.show();
-
 				diagramCanvas.nodeMoveStart = function(){
 					diagramCanvasContextMenu.hide();
 				};
 				diagramCanvas.nodeMoveEnd = function(){
-					moveToMouse();
+					diagramCanvasContextMenu.show();
+					diagramCanvasContextMenu.centreToMouse();
 				};
 				diagramCanvas.selectedNode = function(_selectedNode){
-					moveToMouse();
+
+						diagramCanvasContextMenu.centreToMouse();
+					diagramCanvasContextMenu.show();
 					setTimeout(function(){
 						var existingConfig = null;
 						enumerate(sceneSelectorConfig, this, function(sceneSelectorConfigItem){
@@ -208,10 +215,6 @@
 					});
 				};
 
-				function moveToMouse(){
-					diagramCanvasContextMenu.centreToMouse();
-					diagramCanvasContextMenu.show();
-				}
 				function setSceneConfig(){
 					if (modalWindowTextEditor){
 						var configJSON = modalWindowTextEditor.getValue();
