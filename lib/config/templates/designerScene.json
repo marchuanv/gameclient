@@ -1,16 +1,40 @@
 [
 	{
-		"name":"stateNode",
-		"xPosition": 20,
-		"yPosition": 20,
+		"name":"stateNodeLinkTemplate",
+		"xPosition": 0,
+		"yPosition": 0,
 		"xScale": 1,
 		"yScale": 1,
-		"diameter": 100,
-		"type": "shape",
-		"enabled": true,
+		"enabled": false,
 		"isStatic": false,
-		"shape":"circle",
-		"color":"0xffd900"
-
+		"type": "shape",
+		"shape":"line",
+		"color":"0xFFFFFF",
+		"stateNode2":	{
+			"name":"stateNodeTemplate1",
+			"xPosition": 0,
+			"yPosition": 0,
+			"xScale": 1,
+			"yScale": 1,
+			"diameter": 100,
+			"enabled": false,
+			"isStatic": false,
+			"type": "shape",
+			"shape":"circle",
+			"color":"0xFFFFFF"
+		},
+		"stateNode1":{
+			"name":"stateNodeTemplate2",
+			"xPosition": 0,
+			"yPosition": 0,
+			"xScale": 1,
+			"yScale": 1,
+			"diameter": 100,
+			"enabled": false,
+			"isStatic": false,
+			"type": "shape",
+			"shape":"circle",
+			"color":"0xFFFFFF"
+		}
 	}
 ]

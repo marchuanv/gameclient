@@ -18,7 +18,8 @@
 				var modalWindowCheckbox;
 				var modalWindow = new ModalWindow();
 				var phaserCanvas = new PhaserCanvas();
-
+				phaserCanvas.hide();
+				
 				var phaserCanvasContextMenu = new PhaserCanvasContextMenu();
 				phaserCanvasContextMenu.addMenuItem("Close Preview",function(){
 					factory(function(_instance){
@@ -229,18 +230,18 @@
 				function drawDiagrams(){
 					var username = modalWindowTextBoxUsername.getValue();
 					var password = modalWindowTextBoxPassword.getValue();
-
 					getConfigFromGithub("workflow", username, password, function(_workflowConfig){
-						workflowConfig = _workflowConfig;
-
 						factory(function(_instance){
 							_instance.phaserGame(function(_game){
 								_instance.designerdesignerSceneConfig(function(_sceneConfig){
 									console.log("_sceneConfig",_sceneConfig);
-									_game.start("Designer", "designerScene", function(){});
+									_game.start("Designer", "designerScene", function(){
+										phaserCanvas.show();
+									});
 								});
 							});
 						});
+						workflowConfig = _workflowConfig;
 						getConfigFromGithub("sceneSelector", username, password, function(_sceneSelectorConfig){
 							sceneSelectorConfig = _sceneSelectorConfig;
 						});	
