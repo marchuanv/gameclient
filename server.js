@@ -10,9 +10,9 @@ var releaseDir = path.resolve("/letfly",__dirname+"/release");
 
 app.use(bodyParser.json());
 app.use("/external", express.static("external"));
-app.use("/assets", express.static("assets"));
 app.use("/release", express.static("release"));
 app.use("/downloads", express.static("downloads"));
+app.use("/publish", express.static("publish"));
 
 app.post(/^\/publish$/igm, function(req, res) {
 	release.publish(req.query.fileName, function(filePath){
