@@ -1,5 +1,10 @@
 [
     {
+        "Id": "e808e9a5-34fa-450d-8416-8f7a664276ce",
+        "name": "Designer",
+        "template": "designerScene"
+    },
+    {
         "Id": "8e78a92b-ce35-4c0e-6397-2a24fa428ca5",
         "name": "Loader Scene",
         "template": "preloaderScene"

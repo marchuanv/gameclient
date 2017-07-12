@@ -54,16 +54,17 @@ function Release(){
 			}
 			if (!isSceneTemplate){
 				common.readFile(jsResolvedPath, function complete(data){ //DO JS FILES
+					
 					var newData = data;
 					var releaseFilePath = jsResolvedPath.replace("lib","release");
-					if (releaseFilePath.indexOf("game") >= 0){
-						var startExp = '/*[';
-						var endExp = ']*/';
-						var startIndex = newData.indexOf('/*[');
-						var startIndexOffset =  startIndex+ startExp.length;
-						var endIndex = newData.indexOf(']*/',startIndex);
-						var endIndexOffset = endIndex + endExp.length-3;
-						var header  = newData.substring(startIndex, endIndex + endExp.length);
+					var startExp = '/*[';
+					var endExp = ']*/';
+					var startIndex = newData.indexOf('/*[');
+					var startIndexOffset =  startIndex+ startExp.length;
+					var endIndex = newData.indexOf(']*/',startIndex);
+					var endIndexOffset = endIndex + endExp.length-3;
+					var header  = newData.substring(startIndex, endIndex + endExp.length);
+					if (header.startsWith('/*[')){
 						var arguments = newData.substring(startIndexOffset, endIndexOffset);
 						var factoryDepArray = arguments.split(',');
 						var functionName = common.getFileName(releaseFilePath);
@@ -81,6 +82,7 @@ function Release(){
 						newData = "factory(function(factory){\r\n factory.register("+isClass+", function " +  functionName + "("+arguments+"){\r\n" + newData + " \r\n }, function error(err){})});";
 						newData = beautify(newData, { indent_size: 2 });
 					}
+
 					common.saveFile(releaseFilePath, newData, function () {
 						console.log("code file saved at ",releaseFilePath);
 					}, function fail(err){
@@ -211,7 +213,7 @@ function Release(){
 		console.log('----------------------< STARTING PUBLISH >---------------------');
 		var compressedJs;
 		common.enumerateDir(releaseDir, ".js", function (jsResolvedPath) {
-			if (jsResolvedPath.indexOf("designer") == -1 && jsResolvedPath.indexOf("github") == -1){
+			if (jsResolvedPath.indexOf("github") == -1){
 				if (jsResolvedPath.indexOf(".min.") == -1 ){
 					common.readFile(jsResolvedPath, function(jsScript){
 						if (jsScript){

@@ -1,0 +1,96 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'git+ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData git+ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git
+8 silly fetchOtherPackageData git+ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git
+9 silly cache add args [ 'git+ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git',
+9 silly cache add   null ]
+10 verbose cache add spec git+ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git
+11 silly cache add parsed spec Result {
+11 silly cache add   raw: 'git+ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git',
+11 silly cache add   scope: null,
+11 silly cache add   name: null,
+11 silly cache add   rawSpec: 'git+ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git',
+11 silly cache add   spec: 'ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git',
+11 silly cache add   type: 'git' }
+12 verbose addRemoteGit caching git+ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git
+13 silly tryClone cloning git+ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git via git+ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git
+14 verbose tryClone git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986 not in flight; caching
+15 info git [ 'clone',
+15 info git   '--template=/root/.npm/_git-remotes/_templates',
+15 info git   '--mirror',
+15 info git   'ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git',
+15 info git   '/root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986' ]
+16 error git clone --template=/root/.npm/_git-remotes/_templates --mirror ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git /root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986: Cloning into bare repository '/root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986'...
+16 error git clone --template=/root/.npm/_git-remotes/_templates --mirror ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git /root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986: Permission denied (publickey).
+16 error git clone --template=/root/.npm/_git-remotes/_templates --mirror ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git /root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986: fatal: Could not read from remote repository.
+16 error git clone --template=/root/.npm/_git-remotes/_templates --mirror ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git /root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986:
+16 error git clone --template=/root/.npm/_git-remotes/_templates --mirror ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git /root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986: Please make sure you have the correct access rights
+16 error git clone --template=/root/.npm/_git-remotes/_templates --mirror ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git /root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986: and the repository exists.
+17 silly fetchPackageMetaData Error: Command failed: git clone --template=/root/.npm/_git-remotes/_templates --mirror ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git /root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986
+17 silly fetchPackageMetaData Cloning into bare repository '/root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986'...
+17 silly fetchPackageMetaData Permission denied (publickey).
+17 silly fetchPackageMetaData fatal: Could not read from remote repository.
+17 silly fetchPackageMetaData
+17 silly fetchPackageMetaData Please make sure you have the correct access rights
+17 silly fetchPackageMetaData and the repository exists.
+17 silly fetchPackageMetaData
+17 silly fetchPackageMetaData     at ChildProcess.exithandler (child_process.js:213:12)
+17 silly fetchPackageMetaData     at emitTwo (events.js:87:13)
+17 silly fetchPackageMetaData     at ChildProcess.emit (events.js:172:7)
+17 silly fetchPackageMetaData     at maybeClose (internal/child_process.js:821:16)
+17 silly fetchPackageMetaData     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+17 silly fetchPackageMetaData  error for git+ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git { [Error: Command failed: git clone --template=/root/.npm/_git-remotes/_templates --mirror ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git /root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986
+17 silly fetchPackageMetaData Cloning into bare repository '/root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986'...
+17 silly fetchPackageMetaData Permission denied (publickey).
+17 silly fetchPackageMetaData fatal: Could not read from remote repository.
+17 silly fetchPackageMetaData
+17 silly fetchPackageMetaData Please make sure you have the correct access rights
+17 silly fetchPackageMetaData and the repository exists.
+17 silly fetchPackageMetaData ]
+17 silly fetchPackageMetaData   killed: false,
+17 silly fetchPackageMetaData   code: 128,
+17 silly fetchPackageMetaData   signal: null,
+17 silly fetchPackageMetaData   cmd: 'git clone --template=/root/.npm/_git-remotes/_templates --mirror ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git /root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986' }
+18 silly rollbackFailedOptional Starting
+19 silly rollbackFailedOptional Finishing
+20 silly runTopLevelLifecycles Starting
+21 silly runTopLevelLifecycles Finishing
+22 silly install printInstalled
+23 verbose stack Error: Command failed: git clone --template=/root/.npm/_git-remotes/_templates --mirror ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git /root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986
+23 verbose stack Cloning into bare repository '/root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986'...
+23 verbose stack Permission denied (publickey).
+23 verbose stack fatal: Could not read from remote repository.
+23 verbose stack
+23 verbose stack Please make sure you have the correct access rights
+23 verbose stack and the repository exists.
+23 verbose stack
+23 verbose stack     at ChildProcess.exithandler (child_process.js:213:12)
+23 verbose stack     at emitTwo (events.js:87:13)
+23 verbose stack     at ChildProcess.emit (events.js:172:7)
+23 verbose stack     at maybeClose (internal/child_process.js:821:16)
+23 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+24 verbose cwd /home/marchuanv/designs
+25 error Linux 4.4.0-83-generic
+26 error argv "/usr/bin/nodejs" "/usr/bin/npm" "install" "-g" "git+ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git"
+27 error node v4.2.6
+28 error npm  v3.5.2
+29 error code 128
+30 error Command failed: git clone --template=/root/.npm/_git-remotes/_templates --mirror ssh://git@sahl-rc01.sahl.com:2222/utils/generator-dockerise-general.git /root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986
+30 error Cloning into bare repository '/root/.npm/_git-remotes/git-ssh-git-sahl-rc01-sahl-com-2222-utils-generator-dockerise-general-git-dfc1b986'...
+30 error Permission denied (publickey).
+30 error fatal: Could not read from remote repository.
+30 error
+30 error Please make sure you have the correct access rights
+30 error and the repository exists.
+31 error If you need help, you may report this error at:
+31 error     <https://github.com/npm/npm/issues>
+32 verbose exit [ 1, true ]

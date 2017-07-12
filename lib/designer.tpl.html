@@ -17,50 +17,46 @@
 				var modalWindowTextBoxPassword;
 				var modalWindowCheckbox;
 				var modalWindow = new ModalWindow();
-				var diagramCanvas = new DiagramCanvas();
 				var phaserCanvas = new PhaserCanvas();
-				var diagramCanvasContextMenu = new DiagramCanvasContextMenu();
-				var diagramCanvasPublishButton = new DiagramCanvasButton("Publish");
-				var phaserCanvasButton = new PhaserCanvasButton("Close");
-				phaserCanvasButton.hide();
 
-				phaserCanvasButton.subscribe(function onclick(){
+				var phaserCanvasContextMenu = new PhaserCanvasContextMenu();
+				phaserCanvasContextMenu.addMenuItem("Close Preview",function(){
 					factory(function(_instance){
 						_instance.phaserGame(function(_game){
 							_game.exit();
-							diagramCanvas.show();
-							phaserCanvas.hide();
-							phaserCanvasButton.hide();
+								phaserCanvasContextMenu.update();
+								_game.start("designer", "designer", function(){
+							});
 						});
 					});
 				});
 
-				diagramCanvasPublishButton.subscribe(function onclick(){
-					var url = "/publish?fileName=letfly.zip";
-					$.post(url, function(){
-						window.location.href = "/downloads/letfly.zip";
-					});
-				});
-
-				diagramCanvasContextMenu.addMenuItem("Preview Scene",function(){
+				phaserCanvasContextMenu.addMenuItem("Preview Scene",function(){
 					var sceneJSON = modalWindowTextEditor.getValue();
 					var selectedSceneConfig = JSON.parse(sceneJSON);
 					factory(function(_instance){
-						diagramCanvas.hide(false);
 						setTimeout(function(){
 							_instance.phaserGame(function(_game){
 								sceneJSON = modalWindowTextEditor.getValue();
 								selectedSceneConfig = JSON.parse(sceneJSON);
+								phaserCanvasContextMenu.update();
 								_game.start(selectedSceneConfig.name, selectedSceneConfig.template, function(){
-									phaserCanvas.show();
-									phaserCanvasButton.show();
 								});
 							});
 						},200);
 					});
 				});
 
-				diagramCanvasContextMenu.addMenuItem("Edit Scene Objects",function(){
+
+				phaserCanvasContextMenu.addMenuItem("Publish",function(){
+					var url = "/publish?fileName=letfly.zip";
+					$.post(url, function(){
+						window.location.href = "/downloads/letfly.zip";
+					});
+				});
+
+
+				phaserCanvasContextMenu.addMenuItem("Edit Scene Objects",function(){
 
 					var username = modalWindowTextBoxUsername.getValue();
 					var password = modalWindowTextBoxPassword.getValue();
@@ -118,7 +114,7 @@
 					});
 				});
 
-				diagramCanvasContextMenu.addMenuItem("Edit Scene Config", function(){
+				phaserCanvasContextMenu.addMenuItem("Edit Scene Config", function(){
 					modalWindow.setTitle("State Config","Edit the configuration for the selected state.");
 					modalWindow.show();
 					setTimeout(function	(){
@@ -126,17 +122,17 @@
 					},200);
 				});
 
-				diagramCanvas.nodeMoveStart = function(){
-					diagramCanvasContextMenu.hide();
+				phaserCanvas.nodeMoveStart = function(){
+					phaserCanvasContextMenu.hide();
 				};
-				diagramCanvas.nodeMoveEnd = function(){
-					diagramCanvasContextMenu.show();
-					diagramCanvasContextMenu.centreToMouse();
+				phaserCanvas.nodeMoveEnd = function(){
+					phaserCanvasContextMenu.show();
+					phaserCanvasContextMenu.centreToMouse();
 				};
-				diagramCanvas.selectedNode = function(_selectedNode){
+				phaserCanvas.selectedNode = function(_selectedNode){
 
-						diagramCanvasContextMenu.centreToMouse();
-					diagramCanvasContextMenu.show();
+					phaserCanvasContextMenu.centreToMouse();
+					phaserCanvasContextMenu.show();
 					setTimeout(function(){
 						var existingConfig = null;
 						enumerate(sceneSelectorConfig, this, function(sceneSelectorConfigItem){
@@ -167,8 +163,8 @@
 										var prioritisedNodeArray = [];
 										var links = [];
 										var priority = 0;
-										diagramCanvas.getNodeLinks(function(nodeLinks){
-											diagramCanvas.getNodes(function(nodes){
+										phaserCanvas.getNodeLinks(function(nodeLinks){
+											phaserCanvas.getNodes(function(nodes){
 												var _config = {
 													links: nodeLinks, 
 													nodes: nodes
@@ -183,16 +179,16 @@
 								}
 							});
 							modalWindowTextEditor.populate(existingConfig);
-		
 						});
+
 					},100);	
 				};
-				diagramCanvas.nodeLostFocus = function(){
+				phaserCanvas.nodeLostFocus = function(){
 					setSceneConfig();
-					diagramCanvasContextMenu.hide();
+					phaserCanvasContextMenu.hide();
 				};
-				diagramCanvas.nodeDeleted = function(deletedNode){
-					diagramCanvasContextMenu.hide();
+				phaserCanvas.nodeDeleted = function(deletedNode){
+					phaserCanvasContextMenu.hide();
 					enumerate(sceneSelectorConfig, this, function(sceneSelectorConfigItem, cbCondition, cbRemove){
 						if (deletedNode.Id == sceneSelectorConfigItem.Id){
 							cbRemove();
@@ -236,8 +232,15 @@
 
 					getConfigFromGithub("workflow", username, password, function(_workflowConfig){
 						workflowConfig = _workflowConfig;
-						diagramCanvas.drawNodes(workflowConfig.nodes);
-						diagramCanvas.drawLinks(workflowConfig.links);
+
+						factory(function(_instance){
+							_instance.phaserGame(function(_game){
+								_instance.designerdesignerSceneConfig(function(_sceneConfig){
+									console.log("_sceneConfig",_sceneConfig);
+									_game.start("Designer", "designerScene", function(){});
+								});
+							});
+						});
 						getConfigFromGithub("sceneSelector", username, password, function(_sceneSelectorConfig){
 							sceneSelectorConfig = _sceneSelectorConfig;
 						});	

@@ -1,0 +1,30 @@
+[
+	{
+		"name":"stateNode1",
+		"xPosition": 20,
+		"yPosition": 20,
+		"xScale": 1,
+		"yScale": 1,
+		"diameter": 100,
+		"type": "shape",
+		"enabled": true,
+		"isStatic": false,
+		"shape":"circle",
+		"color":"0xFFFFFF"
+
+	},
+	{
+		"name":"stateNode2",
+		"xPosition": 120,
+		"yPosition": 120,
+		"xScale": 1,
+		"yScale": 1,
+		"diameter": 100,
+		"type": "shape",
+		"enabled": true,
+		"isStatic": false,
+		"shape":"circle",
+		"color":"0xFFFFFF"
+
+	}
+]
