@@ -230,7 +230,7 @@
 				function drawDiagrams(){
 					var username = modalWindowTextBoxUsername.getValue();
 					var password = modalWindowTextBoxPassword.getValue();
-					getConfigFromGithub("workflow", username, password, function(_workflowConfig){
+					// getConfigFromGithub("workflow", username, password, function(_workflowConfig){
 						factory(function(_instance){
 							_instance.phaserGame(function(_game){
 								_instance.designerdesignerSceneConfig(function(_sceneConfig){
@@ -241,11 +241,11 @@
 								});
 							});
 						});
-						workflowConfig = _workflowConfig;
+						// workflowConfig = _workflowConfig;
 						getConfigFromGithub("sceneSelector", username, password, function(_sceneSelectorConfig){
 							sceneSelectorConfig = _sceneSelectorConfig;
 						});	
-					});
+					// });
 					modalWindowTextEditor = new ModalWindowTextEditor("configEditor");
 				};
 
