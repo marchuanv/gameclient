@@ -12,10 +12,12 @@
 	{
 		"name":"stateNodeLinkTemplate",
 		"start":{
+			"name":"",
 			"xPosition": 0,
 			"yPosition": 0
 		},
 		"end":{
+			"name":"",
 			"xPosition": 0,
 			"yPosition": 0
 		},
