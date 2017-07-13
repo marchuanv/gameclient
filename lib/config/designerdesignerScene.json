@@ -7,10 +7,7 @@
 		"yScale": 1,
 		"diameter": 100,
 		"enabled": false,
-		"isStatic": false,
-		"type": "shape",
-		"shape":"circle",
-		"color":"0xFFFFFF"
+		"type": "sprite | image"
 	},
 	{
 		"name":"stateNodeLinkTemplate",
@@ -25,9 +22,6 @@
 		"xScale": 1,
 		"yScale": 1,
 		"enabled": false,
-		"isStatic": false,
-		"type": "shape",
-		"shape":"arrow",
-		"color":"0xFFFFFF"
+		"type": "sprite | image"
 	}
 ]
