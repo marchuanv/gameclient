@@ -1,26 +1,30 @@
 [
 	{
-		"file": "../assets/cursor.png",
+		"file": "../publish/assets/cursor.png",
 		"name": "cursor"
 	},
 	{
-		"file": "../assets/playerScore.png",
+		"file": "../publish/assets/playerScore.png",
 		"name": "playerScore"
 	},
 	{
-		"file": "../assets/scoreboard_heading.png",
+		"file": "../publish/assets/scoreboard_heading.png",
 		"name": "scoreboardHeading"
 	},
 	{
-		"file": "../assets/scoreboard.png",
+		"file": "../publish/assets/scoreboard.png",
 		"name": "scoreboardBackground"
 	},
 	{
-		"file": "../assets/background.jpg",
+		"file": "../publish/assets/background.jpg",
 		"name": "flyBackground"
 	},
 	{
-		"file": "../assets/capturePlayer.png",
+		"file": "../publish/assets/capturePlayer.png",
 		"name": "playerCapture"
+	},
+	{
+		"file": "../publish/assets/diagramMenu.png",
+		"name": "diagramMenu"
 	}
 ]

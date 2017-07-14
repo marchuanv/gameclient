@@ -58,5 +58,21 @@
 	{
 		"file": "../assets/fly.png",
 		"name": "fly10"
+	},
+	{
+		"file": "../publish/assets/startEndStateNodeTemplate.png",
+		"name": "initialStateNodeTemplate"
+	},
+	{
+		"file": "../publish/assets/startEndStateNodeTemplate.png",
+		"name": "finalStateNodeTemplate"
+	},
+	{
+		"file": "../publish/assets/stateNodeTemplate.png",
+		"name": "stateNodeTemplate"
+	},
+	{
+		"file": "../publish/assets/stateNodeLinkTemplate.png",
+		"name": "stateNodeLinkTemplate"
 	}
 ]

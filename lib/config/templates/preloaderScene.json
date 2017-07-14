@@ -4,7 +4,6 @@
 		"enabled": true,
 		"hasAnimations": true,
 		"height": 600,
-		"isStatic": true,
 		"name": "preloader",
 		"priority": 1,
 		"width": 800,
@@ -12,6 +11,7 @@
 		"xScale": 1,
 		"yPosition": 0,
 		"yScale": 1,
+		"startAnimation":true,
 		"type": "sprite | animation"
 	},
 	{
@@ -19,7 +19,6 @@
 		"enabled": true,
 		"hasAnimations": false,
 		"height": 40,
-		"isStatic": false,
 		"name": "cursor",
 		"priority": 2,
 		"width": 40,

@@ -4,9 +4,7 @@
 			{
 				"startIndex": 0,
 				"endIndex": 1,
-				"name": "play",
-				"start": false,
-				"repeat": false
+				"name": "play"
 			}
 		],
 		"frameHeight": 46,
@@ -19,9 +17,7 @@
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "play",
-				"start": false,
-				"repeat": false
+				"name": "play"
 			}
 		],
 		"frameHeight": 46,
@@ -34,9 +30,7 @@
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "play",
-				"start": false,
-				"repeat": false
+				"name": "play"
 			}
 		],
 		"frameHeight": 46,
@@ -49,9 +43,7 @@
 			{
 				"startIndex": 0,
 				"endIndex": 168,
-				"name": "play",
-				"start": true,
-				"repeat": false
+				"name": "play"
 			}
 		],
 		"frameHeight": 600,
@@ -64,16 +56,12 @@
 			{
 				"startIndex": 0,
 				"endIndex": 15,
-				"name": "alive",
-				"start": true,
-				"repeat": true
+				"name": "alive"
 			},
 			{
 				"startIndex": 16,
 				"endIndex": 21,
-				"name": "dead",
-				"start": false,
-				"repeat": false
+				"name": "dead"
 			}
 		],
 		"frameHeight": 128,
@@ -86,16 +74,12 @@
 			{
 				"startIndex": 0,
 				"endIndex": 15,
-				"name": "alive2",
-				"start": true,
-				"repeat": true
+				"name": "alive2"
 			},
 			{
 				"startIndex": 16,
 				"endIndex": 21,
-				"name": "dead2",
-				"start": false,
-				"repeat": false
+				"name": "dead2"
 			}
 		],
 		"frameHeight": 128,
@@ -108,16 +92,12 @@
 			{
 				"startIndex": 0,
 				"endIndex": 15,
-				"name": "alive3",
-				"start": true,
-				"repeat": true
+				"name": "alive3"
 			},
 			{
 				"startIndex": 16,
 				"endIndex": 21,
-				"name": "dead3",
-				"start": false,
-				"repeat": false
+				"name": "dead3"
 			}
 		],
 		"frameHeight": 128,
@@ -130,16 +110,12 @@
 			{
 				"startIndex": 0,
 				"endIndex": 15,
-				"name": "alive",
-				"start": true,
-				"repeat": true
+				"name": "alive"
 			},
 			{
 				"startIndex": 16,
 				"endIndex": 21,
-				"name": "dead",
-				"start": false,
-				"repeat": false
+				"name": "dead"
 			}
 		],
 		"frameHeight": 128,
@@ -152,16 +128,12 @@
 			{
 				"startIndex": 0,
 				"endIndex": 15,
-				"name": "alive",
-				"start": true,
-				"repeat": true
+				"name": "alive"
 			},
 			{
 				"startIndex": 16,
 				"endIndex": 21,
-				"name": "dead",
-				"start": false,
-				"repeat": false
+				"name": "dead"
 			}
 		],
 		"frameHeight": 128,
@@ -174,16 +146,12 @@
 			{
 				"startIndex": 0,
 				"endIndex": 15,
-				"name": "alive",
-				"start": true,
-				"repeat": true
+				"name": "alive"
 			},
 			{
 				"startIndex": 16,
 				"endIndex": 21,
-				"name": "dead",
-				"start": false,
-				"repeat": false
+				"name": "dead"
 			}
 		],
 		"frameHeight": 128,
@@ -196,16 +164,12 @@
 			{
 				"startIndex": 0,
 				"endIndex": 15,
-				"name": "alive",
-				"start": true,
-				"repeat": true
+				"name": "alive"
 			},
 			{
 				"startIndex": 16,
 				"endIndex": 21,
-				"name": "dead",
-				"start": false,
-				"repeat": false
+				"name": "dead"
 			}
 		],
 		"frameHeight": 128,
@@ -218,16 +182,12 @@
 			{
 				"startIndex": 0,
 				"endIndex": 15,
-				"name": "alive",
-				"start": true,
-				"repeat": true
+				"name": "alive"
 			},
 			{
 				"startIndex": 16,
 				"endIndex": 21,
-				"name": "dead",
-				"start": false,
-				"repeat": false
+				"name": "dead"
 			}
 		],
 		"frameHeight": 128,
@@ -240,16 +200,12 @@
 			{
 				"startIndex": 0,
 				"endIndex": 15,
-				"name": "alive",
-				"start": true,
-				"repeat": true
+				"name": "alive"
 			},
 			{
 				"startIndex": 16,
 				"endIndex": 21,
-				"name": "dead",
-				"start": false,
-				"repeat": false
+				"name": "dead"
 			}
 		],
 		"frameHeight": 128,
@@ -262,21 +218,69 @@
 			{
 				"startIndex": 0,
 				"endIndex": 15,
-				"name": "alive10",
-				"start": true,
-				"repeat": true
+				"name": "alive10"
 			},
 			{
 				"startIndex": 16,
 				"endIndex": 21,
-				"name": "dead19",
-				"start": false,
-				"repeat": false
+				"name": "dead19"
 			}
 		],
 		"frameHeight": 128,
 		"frameWidth": 128,
 		"name": "fly10",
 		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 1,
+				"name": "switchState"
+			}
+		],
+		"frameHeight": 98,
+		"frameWidth": 98,
+		"name": "stateNodeTemplate",
+		"speed": 1
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 1,
+				"name": "switchInitalState"
+			}
+		],
+		"frameHeight": 98,
+		"frameWidth": 98,
+		"name": "initialStateNodeTemplate",
+		"speed": 1
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 1,
+				"name": "switchFinalState"
+			}
+		],
+		"frameHeight": 98,
+		"frameWidth": 98,
+		"name": "finalStateNodeTemplate",
+		"speed": 1
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 1,
+				"name": "switchStateNodeLink"
+			}
+		],
+		"frameHeight": 15,
+		"frameWidth": 332,
+		"name": "stateNodeLinkTemplate",
+		"speed": 1
 	}
 ]
