@@ -240,7 +240,7 @@
 			}
 		],
 		"frameHeight": 98,
-		"frameWidth": 98,
+		"frameWidth": 153,
 		"name": "stateNodeTemplate",
 		"speed": 1
 	},
@@ -252,8 +252,8 @@
 				"name": "switchInitalState"
 			}
 		],
-		"frameHeight": 98,
-		"frameWidth": 98,
+		"frameHeight": 99,
+		"frameWidth": 100,
 		"name": "initialStateNodeTemplate",
 		"speed": 1
 	},
@@ -265,16 +265,16 @@
 				"name": "switchFinalState"
 			}
 		],
-		"frameHeight": 98,
-		"frameWidth": 98,
+		"frameHeight": 99,
+		"frameWidth": 100,
 		"name": "finalStateNodeTemplate",
 		"speed": 1
 	},
 	{
 		"animations": [
 			{
-				"startIndex": 0,
-				"endIndex": 1,
+				"startIndex": 1,
+				"endIndex": 0,
 				"name": "switchStateNodeLink"
 			}
 		],
