@@ -236,7 +236,12 @@
 			{
 				"startIndex": 0,
 				"endIndex": 1,
-				"name": "switchState"
+				"name": "switchUnselectedState"
+			},
+			{
+				"startIndex": 1,
+				"endIndex": 0,
+				"name": "switchSelectedState"
 			}
 		],
 		"frameHeight": 98,
@@ -247,9 +252,14 @@
 	{
 		"animations": [
 			{
+				"startIndex": 2,
+				"endIndex": 0,
+				"name": "switchUnselectedInitalState"
+			},
+			{
 				"startIndex": 0,
-				"endIndex": 1,
-				"name": "switchInitalState"
+				"endIndex": 2,
+				"name": "switchSelectedInitalState"
 			}
 		],
 		"frameHeight": 99,
@@ -262,7 +272,12 @@
 			{
 				"startIndex": 0,
 				"endIndex": 1,
-				"name": "switchFinalState"
+				"name": "switchUnselectedFinalState"
+			},
+			{
+				"startIndex": 1,
+				"endIndex": 3,
+				"name": "switchSelectedFinalState"
 			}
 		],
 		"frameHeight": 99,
@@ -275,7 +290,12 @@
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "switchStateNodeLink"
+				"name": "switchUnselectedStateNodeLink"
+			},
+			{
+				"startIndex": 0,
+				"endIndex": 1,
+				"name": "switchSelectedStateNodeLink"
 			}
 		],
 		"frameHeight": 15,

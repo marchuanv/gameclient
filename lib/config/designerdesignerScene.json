@@ -10,7 +10,7 @@
 		"diameter": 100,
 		"enabled": true,
 		"priority":2,
-		"animationStartName":"swithInitialState",
+		"animationStartName":"swithUnselectedInitialState",
 		"type": "sprite | animation"
 	},
 	{
@@ -24,7 +24,7 @@
 		"diameter": 100,
 		"enabled": true,
 		"priority":2,
-		"animationStartName":"swithState",
+		"animationStartName":"swithUnselectedState",
 		"type": "sprite | animation"
 	},
 	{
@@ -47,7 +47,7 @@
 		"yScale": 1,
 		"enabled": true,
 		"priority":2,
-		"animationStartName":"switchStateNodeLink",
+		"animationStartName":"switchUnselectedStateNodeLink",
 		"type": "sprite | animation"
 	},
 	{
@@ -61,7 +61,7 @@
 		"diameter": 100,
 		"enabled": true,
 		"priority":2,
-		"animationStartName":"switchFinalState",
+		"animationStartName":"switchUnselectedFinalState",
 		"type": "sprite | animation"
 	},
 	{
