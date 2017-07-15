@@ -24,7 +24,7 @@
 		"diameter": 100,
 		"enabled": true,
 		"priority":2,
-		"animationStartName":"swithUnselectedState",
+		"animationStartName":"switchUnselectedState",
 		"type": "sprite | animation"
 	},
 	{
@@ -78,5 +78,17 @@
         "xScale": 1,
         "yScale": 1,
         "type": "image"
-    }
+    },
+	{
+		"name":"launchGame",
+		"xPosition": "",
+		"yPosition": 30,
+		"xAnchorPosition": -1,
+		"yAnchorPosition": -1,
+		"xScale": 1,
+		"yScale": 1,
+		"enabled": true,
+		"priority":3,
+		"type": "sprite | animation"
+	}
 ]

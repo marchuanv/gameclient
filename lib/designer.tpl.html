@@ -233,11 +233,8 @@
 					// getConfigFromGithub("workflow", username, password, function(_workflowConfig){
 						factory(function(_instance){
 							_instance.phaserGame(function(_game){
-								_instance.designerdesignerSceneConfig(function(_sceneConfig){
-									console.log("_sceneConfig",_sceneConfig);
-									_game.start("Designer", "designerScene", function(){
-										phaserCanvas.show();
-									});
+								_game.start("designerScene", function(){
+									phaserCanvas.show();
 								});
 							});
 						});

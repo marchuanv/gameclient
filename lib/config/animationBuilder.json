@@ -234,20 +234,20 @@
 	{
 		"animations": [
 			{
-				"startIndex": 0,
-				"endIndex": 1,
+				"startIndex": 1,
+				"endIndex": 0,
 				"name": "switchUnselectedState"
 			},
 			{
-				"startIndex": 1,
-				"endIndex": 0,
+				"startIndex":0,
+				"endIndex": 1,
 				"name": "switchSelectedState"
 			}
 		],
 		"frameHeight": 98,
-		"frameWidth": 153,
+		"frameWidth": 152.2,
 		"name": "stateNodeTemplate",
-		"speed": 1
+		"speed": 100
 	},
 	{
 		"animations": [
@@ -265,7 +265,7 @@
 		"frameHeight": 99,
 		"frameWidth": 100,
 		"name": "initialStateNodeTemplate",
-		"speed": 1
+		"speed": 100
 	},
 	{
 		"animations": [
@@ -283,7 +283,7 @@
 		"frameHeight": 99,
 		"frameWidth": 100,
 		"name": "finalStateNodeTemplate",
-		"speed": 1
+		"speed": 100
 	},
 	{
 		"animations": [
@@ -301,6 +301,19 @@
 		"frameHeight": 15,
 		"frameWidth": 332,
 		"name": "stateNodeLinkTemplate",
-		"speed": 1
+		"speed": 100
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 1,
+				"endIndex": 0,
+				"name": "buttonSelectedLaunch"
+			}
+		],
+		"frameHeight": 44,
+		"frameWidth": 181,
+		"name": "launchGame",
+		"speed": 10
 	}
 ]

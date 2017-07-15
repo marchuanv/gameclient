@@ -75,4 +75,9 @@
 		"file": "../publish/assets/stateNodeLinkTemplate.png",
 		"name": "stateNodeLinkTemplate"
 	}
+	,
+	{
+		"file": "../publish/assets/launchGame.png",
+		"name": "launchGame"
+	}
 ]
