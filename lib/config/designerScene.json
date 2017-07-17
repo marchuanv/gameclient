@@ -10,6 +10,7 @@
 		"diameter": 100,
 		"enabled": true,
 		"priority":2,
+		"dragDrop":true,
 		"animationStartName":"swithUnselectedInitialState",
 		"type": "sprite | animation"
 	},
@@ -24,6 +25,7 @@
 		"diameter": 100,
 		"enabled": true,
 		"priority":2,
+		"dragDrop":true,
 		"animationStartName":"switchUnselectedState",
 		"type": "sprite | animation"
 	},
@@ -32,7 +34,7 @@
 		"xPosition": 40,
 		"yPosition": 400,
 		"xAnchorPosition": 0,
-		"yAnchorPosition": 0,
+		"yAnchorPosition": 0.5,
 		"start":{
 			"name":"",
 			"xPosition": 0,
@@ -47,6 +49,7 @@
 		"yScale": 1,
 		"enabled": true,
 		"priority":2,
+		"dragDrop":true,
 		"animationStartName":"switchUnselectedStateNodeLink",
 		"type": "sprite | animation"
 	},
@@ -61,6 +64,7 @@
 		"diameter": 100,
 		"enabled": true,
 		"priority":2,
+		"dragDrop":true,
 		"animationStartName":"switchUnselectedFinalState",
 		"type": "sprite | animation"
 	},
