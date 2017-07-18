@@ -9,7 +9,7 @@
 		"yScale": 1,
 		"diameter": 100,
 		"enabled": true,
-		"priority":2,
+		"priority":1,
 		"dragDrop":true,
 		"animationStartName":"swithUnselectedInitialState",
 		"type": "sprite | animation"
@@ -24,7 +24,7 @@
 		"yScale": 1,
 		"diameter": 100,
 		"enabled": true,
-		"priority":2,
+		"priority":1,
 		"dragDrop":true,
 		"animationStartName":"switchUnselectedState",
 		"type": "sprite | animation"
@@ -63,7 +63,7 @@
 		"yScale": 1,
 		"diameter": 100,
 		"enabled": true,
-		"priority":2,
+		"priority":1,
 		"dragDrop":true,
 		"animationStartName":"switchUnselectedFinalState",
 		"type": "sprite | animation"
