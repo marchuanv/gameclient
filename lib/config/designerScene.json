@@ -12,7 +12,8 @@
 		"priority":1,
 		"dragDrop":true,
 		"animationStartName":"swithUnselectedInitialState",
-		"type": "sprite | animation"
+		"type": "sprite | animation",
+		"shape":"circle"
 	},
 	{
 		"name":"stateNodeTemplate",
@@ -27,7 +28,8 @@
 		"priority":1,
 		"dragDrop":true,
 		"animationStartName":"switchUnselectedState",
-		"type": "sprite | animation"
+		"type": "sprite | animation",
+		"shape":"rectangle"
 	},
 	{
 		"name":"stateNodeLinkTemplate",
@@ -51,7 +53,8 @@
 		"priority":2,
 		"dragDrop":true,
 		"animationStartName":"switchUnselectedStateNodeLink",
-		"type": "sprite | animation"
+		"type": "sprite | animation",
+		"shape":"line"
 	},
 	{
 		"name":"finalStateNodeTemplate",
@@ -66,7 +69,8 @@
 		"priority":1,
 		"dragDrop":true,
 		"animationStartName":"switchUnselectedFinalState",
-		"type": "sprite | animation"
+		"type": "sprite | animation",
+		"shape":"circle"
 	},
 	{
         "enabled": true,
@@ -81,7 +85,8 @@
         "yPosition": 10,
         "xScale": 1,
         "yScale": 1,
-        "type": "image"
+        "type": "image",
+		"shape":"circle"
     },
 	{
 		"name":"launchGame",
@@ -93,6 +98,7 @@
 		"yScale": 1,
 		"enabled": true,
 		"priority":3,
-		"type": "sprite | animation"
+		"type": "sprite | animation",
+		"shape":"rectangle"
 	}
 ]
