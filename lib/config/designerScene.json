@@ -11,6 +11,7 @@
 		"enabled": true,
 		"priority":1,
 		"dragDrop":true,
+
 		"animationStartName":"swithUnselectedInitialState",
 		"type": "sprite | animation",
 		"shape":"circle"
@@ -54,7 +55,9 @@
 		"dragDrop":true,
 		"animationStartName":"switchUnselectedStateNodeLink",
 		"type": "sprite | animation",
-		"shape":"line"
+		"shape":"line",
+		"width":"150",
+		"height":"15"
 	},
 	{
 		"name":"finalStateNodeTemplate",
@@ -86,7 +89,9 @@
         "xScale": 1,
         "yScale": 1,
         "type": "image",
-		"shape":"circle"
+		"shape":"circle",
+		"width":"200",
+		"height":"600"
     },
 	{
 		"name":"launchGame",
@@ -99,6 +104,8 @@
 		"enabled": true,
 		"priority":3,
 		"type": "sprite | animation",
-		"shape":"rectangle"
+		"shape":"rectangle",
+		"width":"181",
+		"height":"44"
 	}
 ]
