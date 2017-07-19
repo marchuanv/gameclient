@@ -74,10 +74,13 @@
 	{
 		"file": "../publish/assets/stateNodeLinkTemplate.png",
 		"name": "stateNodeLinkTemplate"
-	}
-	,
+	},
 	{
 		"file": "../publish/assets/launchGame.png",
 		"name": "launchGame"
+	},
+	{
+		"file": "../publish/assets/stateNodeLinkArrowTemplate.png",
+		"name": "stateNodeLinkArrowTemplate"
 	}
 ]

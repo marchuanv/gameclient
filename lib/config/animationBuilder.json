@@ -315,5 +315,23 @@
 		"frameWidth": 181,
 		"name": "launchGame",
 		"speed": 10
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 1,
+				"endIndex": 0,
+				"name": "switchUnselectedStateNodeLinkArrow"
+			},
+			{
+				"startIndex": 0,
+				"endIndex": 1,
+				"name": "switchSelectedStateNodeLinkArrow"
+			}
+		],
+		"frameHeight": 15,
+		"frameWidth": 15,
+		"name": "stateNodeLinkArrowTemplate",
+		"speed": 100
 	}
 ]

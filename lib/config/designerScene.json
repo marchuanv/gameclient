@@ -25,7 +25,6 @@
 		"yAnchorPosition": -1,
 		"xScale": 1,
 		"yScale": 1,
-		
 		"radius": 50,
 		"enabled": true,
 		"priority":1,
@@ -40,16 +39,8 @@
 		"yPosition": 400,
 		"xAnchorPosition": 0,
 		"yAnchorPosition": 0.5,
-		"start":{
-			"name":"",
-			"xPosition": 0,
-			"yPosition": 0
-		},
-		"end":{
-			"name":"",
-			"xPosition": 0,
-			"yPosition": 0
-		},
+		"startNode":"",
+		"endNode":"",
 		"xScale": 0.4,
 		"yScale": 1,
 		"enabled": true,
@@ -110,5 +101,25 @@
 		"shape":"rectangle",
 		"width":"181",
 		"height":"44"
+	},
+	{
+		"name":"stateNodeLinkArrowTemplate",
+		"xPosition": 0,
+		"yPosition": 0,
+		"xAnchorPosition": 0.5,
+		"yAnchorPosition": 0.5,
+		"startNode":"",
+		"endNode":"",
+		"xScale": 1,
+		"yScale": 1,
+		"enabled": true,
+		"priority":2,
+		"dragDrop":false,
+		"animationStartName":"switchUnselectedStateNodeLinkArrow",
+		"type": "sprite | animation",
+		"shape":"arrow",
+		"width":"15",
+		"height":"15",
+		"visible":false
 	}
 ]
