@@ -106,7 +106,7 @@
 		"name":"stateNodeLinkArrowTemplate",
 		"xPosition": 0,
 		"yPosition": 0,
-		"xAnchorPosition": 0.5,
+		"xAnchorPosition": 1,
 		"yAnchorPosition": 0.5,
 		"startNode":"",
 		"endNode":"",
