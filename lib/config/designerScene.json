@@ -60,7 +60,6 @@
 		"yAnchorPosition": -1,
 		"xScale": 1,
 		"yScale": 1,
-		
 		"radius": 50,
 		"enabled": true,
 		"priority":1,
@@ -118,7 +117,7 @@
 		"animationStartName":"switchUnselectedStateNodeLinkArrow",
 		"type": "sprite | animation",
 		"shape":"arrow",
-		"width":"15",
+		"width":"14.5",
 		"height":"15",
 		"visible":false
 	}
