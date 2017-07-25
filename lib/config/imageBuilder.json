@@ -26,5 +26,9 @@
 	{
 		"file": "../publish/assets/diagramMenu.png",
 		"name": "diagramMenu"
+	},
+	{
+		"file": "../publish/assets/contextLoader.png",
+		"name": "contextLoader"
 	}
 ]

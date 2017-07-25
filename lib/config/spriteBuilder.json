@@ -82,5 +82,9 @@
 	{
 		"file": "../publish/assets/stateNodeLinkArrowTemplate.png",
 		"name": "stateNodeLinkArrowTemplate"
+	},
+	{
+		"file": "../publish/assets/contextLoader.png",
+		"name": "contextLoader"
 	}
 ]

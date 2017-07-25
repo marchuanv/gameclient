@@ -333,5 +333,18 @@
 		"frameWidth": 15,
 		"name": "stateNodeLinkArrowTemplate",
 		"speed": 100
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 0,
+				"endIndex": 3,
+				"name": "load"
+			}
+		],
+		"frameHeight": 50,
+		"frameWidth": 50,
+		"name": "contextLoader",
+		"speed": 1
 	}
 ]

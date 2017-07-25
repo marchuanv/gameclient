@@ -86,6 +86,22 @@
 		"height":"600"
     },
 	{
+		"name":"contextLoader",
+		"xPosition": 500,
+		"yPosition": 500,
+		"xAnchorPosition": 0.5,
+		"yAnchorPosition": 0.5,
+		"xScale": 1,
+		"yScale": 1,
+		"radius": 50,
+		"enabled": true,
+		"priority":1,
+		"dragDrop":false,
+		"type": "sprite | animation",
+		"shape":"circle"
+	},
+
+	{
 		"name":"launchGame",
 		"xPosition": "",
 		"yPosition": 30,
