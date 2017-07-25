@@ -345,6 +345,6 @@
 		"frameHeight": 50,
 		"frameWidth": 50,
 		"name": "contextLoader",
-		"speed": 1
+		"speed": 10
 	}
 ]
