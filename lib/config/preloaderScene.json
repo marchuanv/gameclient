@@ -12,7 +12,8 @@
 		"yPosition": 0,
 		"yScale": 1,
 		"startAnimation":true,
-		"type": "sprite | animation"
+		"type": "sprite | animation",
+		"priority":2
 	},
 	{
 		"anchor": true,
@@ -26,6 +27,7 @@
 		"xScale": 1,
 		"yPosition": 0,
 		"yScale": 1,
-		"type": "image"
+		"type": "image",
+		"priority":1
 	}
 ]

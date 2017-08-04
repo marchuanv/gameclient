@@ -1,62 +1,62 @@
 [
 	{
-		"file": "../assets/capturePlayer.png",
+		"file": "../publish/assets/capturePlayer.png",
 		"name": "playerCapture"
 	},
 	{
-		"file": "../assets/play_btn.png",
+		"file": "../publish/assets/play_btn.png",
 		"name": "playButton"
 	},
 	{
-		"file": "../assets/close_btn.png",
+		"file": "../publish/assets/close_btn.png",
 		"name": "closeButton"
 	},
 	{
-		"file": "../assets/submit_btn.png",
+		"file": "../publish/assets/submit_btn.png",
 		"name": "submitButton"
 	},
 	{
-		"file": "../assets/preloader.png",
+		"file": "../publish/assets/preloader.png",
 		"name": "preloader"
 	},
 	{
-		"file": "../assets/fly.png",
+		"file": "../publish/assets/fly.png",
 		"name": "fly1"
 	},
 	{
-		"file": "../assets/fly.png",
+		"file": "../publish/assets/fly.png",
 		"name": "fly2"
 	},
 	{
-		"file": "../assets/fly.png",
+		"file": "../publish/assets/fly.png",
 		"name": "fly3"
 	},
 	{
-		"file": "../assets/fly.png",
+		"file": "../publish/assets/fly.png",
 		"name": "fly4"
 	},
 	{
-		"file": "../assets/fly.png",
+		"file": "../publish/assets/fly.png",
 		"name": "fly5"
 	},
 	{
-		"file": "../assets/fly.png",
+		"file": "../publish/assets/fly.png",
 		"name": "fly6"
 	},
 	{
-		"file": "../assets/fly.png",
+		"file": "../publish/assets/fly.png",
 		"name": "fly7"
 	},
 	{
-		"file": "../assets/fly.png",
+		"file": "../publish/assets/fly.png",
 		"name": "fly8"
 	},
 	{
-		"file": "../assets/fly.png",
+		"file": "../publish/assets/fly.png",
 		"name": "fly9"
 	},
 	{
-		"file": "../assets/fly.png",
+		"file": "../publish/assets/fly.png",
 		"name": "fly10"
 	},
 	{
