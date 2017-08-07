@@ -12,7 +12,8 @@
 		"xScale": 1,
 		"yPosition": 0,
 		"yScale": 1,
-		"type": "image"
+		"type": "image",
+		"enabled": true
 	},
 	{
 		"anchor": true,
@@ -27,7 +28,8 @@
 		"xScale": 1,
 		"yPosition": 260,
 		"yScale": 1,
-		"type": "text"
+		"type": "text",
+		"enabled": true
 	},
 	{
 		"anchor": false,
@@ -42,7 +44,8 @@
 		"xScale": 1,
 		"yPosition": 240,
 		"yScale": 1,
-		"type": "sprite"
+		"type": "sprite | image",
+		"enabled": true
 	},
 	{
 		"anchor": false,
@@ -57,7 +60,8 @@
 		"xScale": 1,
 		"yPosition": 500,
 		"yScale": 1,
-		"type": "sprite | animation"
+		"type": "sprite | animation",
+		"enabled": true
 	},
 	{
 		"anchor": false,
@@ -72,6 +76,7 @@
 		"xScale": 1,
 		"yPosition": 0,
 		"yScale": 1,
-		"type":"image"
+		"type":"image",
+		"enabled": true
 	}
 ]

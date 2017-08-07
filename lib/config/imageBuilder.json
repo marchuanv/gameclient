@@ -20,7 +20,7 @@
 		"name": "flyBackground"
 	},
 	{
-		"file": "../publish/assets/capturePlayer.png",
+		"file": "../publish/assets/playerCapture.png",
 		"name": "playerCapture"
 	},
 	{
