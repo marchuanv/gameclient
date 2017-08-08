@@ -7,12 +7,10 @@
 		"yAnchorPosition": 0.5,
 		"xScale": 1,
 		"yScale": 1,
-		
 		"radius": 50,
 		"enabled": true,
 		"priority":1,
 		"dragDrop":true,
-
 		"animationStartName":"swithUnselectedInitialState",
 		"type": "sprite | animation",
 		"shape":"circle"

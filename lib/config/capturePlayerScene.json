@@ -25,11 +25,12 @@
 		"priority": 2,
 		"width": 0,
 		"xPosition": 440,
-		"xScale": 1,
-		"yPosition": 260,
-		"yScale": 1,
+		"xScale": 1.2,
+		"yPosition": 245,
+		"yScale": 1.2,
 		"type": "text",
-		"enabled": true
+		"enabled": true,
+		"text":"enter your name here..."
 	},
 	{
 		"anchor": false,
