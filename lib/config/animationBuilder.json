@@ -30,7 +30,7 @@
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "play"
+				"name": "play_submit"
 			}
 		],
 		"frameHeight": 46,
