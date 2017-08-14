@@ -79,7 +79,13 @@ function Release(){
 							newData = newData.replace("/*CLASS*/","");
 						}
 
-						newData = "factory(function(factory){\r\n factory.register("+isClass+", function " +  functionName + "("+arguments+"){\r\n" + newData + " \r\n }, function error(err){})});";
+						var isSingleton = false;
+						if (newData.indexOf("/*SINGLETON*/") >= 0){
+							isSingleton = true;
+							newData = newData.replace("/*SINGLETON*/","");
+						}
+
+						newData = "factory(function(factory){\r\n factory.register("+isClass+", "+isSingleton+", function " +  functionName + "("+arguments+"){\r\n" + newData + " \r\n }, function error(err){})});";
 						newData = beautify(newData, { indent_size: 2 });
 					}
 
@@ -109,7 +115,7 @@ function Release(){
 					common.readFile(jsonResolvedPath, function(jsonStr){
 						var obj = JSON.parse(jsonStr);
 						var _newConfig = JSON.stringify(obj);
-						var config = "factory(function(factory){ factory.register(false, function " +  functionName + "(){\r\n return '"+_newConfig+"'; \r\n }, function error(err){})});";
+						var config = "factory(function(factory){ factory.register(false, false, function " +  functionName + "(){\r\n return '"+_newConfig+"'; \r\n }, function error(err){})});";
 						common.saveFile(releaseFilePath, config, function saved(){
 							console.log("config json file saved at ",releaseFilePath);
 						}, function fail(){

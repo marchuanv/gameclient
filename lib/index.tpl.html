@@ -6,9 +6,11 @@
 	<body>
 		<script type="text/javascript">
 			window.onload = function(){
-				factory(function(_instance){
-					_instance.phaserGame(function(game){
-						game.start();
+				thread(function(){
+					factory(function(_instance){
+						_instance.phaserGame(function(game){
+							game.start();
+						});
 					});
 				});
 			};

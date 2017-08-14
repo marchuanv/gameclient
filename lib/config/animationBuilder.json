@@ -4,7 +4,7 @@
 			{
 				"startIndex": 0,
 				"endIndex": 1,
-				"name": "play"
+				"name": "playButtonAnim"
 			}
 		],
 		"frameHeight": 46,
@@ -17,7 +17,7 @@
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "play"
+				"name": "closeButtonAnim"
 			}
 		],
 		"frameHeight": 46,
@@ -30,7 +30,7 @@
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "play_submit"
+				"name": "submitButtonAnim"
 			}
 		],
 		"frameHeight": 46,
