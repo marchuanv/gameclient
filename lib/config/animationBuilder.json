@@ -4,185 +4,192 @@
 			{
 				"startIndex": 0,
 				"endIndex": 1,
-				"name": "playButtonAnim"
+				"name": "playButtonAnim",
+				"speed": 10				
 			}
 		],
 		"frameHeight": 46,
 		"frameWidth": 150,
-		"name": "playButton",
-		"speed": 10
+		"name": "playButton"
 	},
 	{
 		"animations": [
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "closeButtonAnim"
+				"name": "closeButtonAnim",
+				"speed": 10				
 			}
 		],
 		"frameHeight": 46,
 		"frameWidth": 150,
-		"name": "closeButton",
-		"speed": 10
+		"name": "closeButton"
 	},
 	{
 		"animations": [
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "submitButtonAnim"
+				"name": "submitButtonAnim",
+				"speed": 0				
 			}
 		],
 		"frameHeight": 46,
 		"frameWidth": 150,
-		"name": "submitButton",
-		"speed": 0
+		"name": "submitButton"
 	},
 	{
 		"animations": [
 			{
 				"startIndex": 0,
 				"endIndex": 168,
-				"name": "play"
+				"name": "play",
+				"speed": 0
 			}
 		],
 		"frameHeight": 600,
 		"frameWidth": 800,
-		"name": "preloader",
-		"speed": 0
+		"name": "preloader"
 	},
 	{
 		"animations": [
 			{
 				"startIndex": 0,
 				"endIndex": 15,
-				"name": "flyAlive"
+				"name": "flyAlive",
+				"repeat": true,
+				"speed": 10
 			},
 			{
 				"startIndex": 16,
 				"endIndex": 21,
-				"name": "flyDead"
+				"name": "flyDead",
+				"speed": 10
 			}
 		],
 		"frameHeight": 128,
 		"frameWidth": 128,
-		"name": "fly",
-		"speed": 10
+		"name": "fly"
 	},
 	{
 		"animations": [
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "switchUnselectedState"
+				"name": "switchUnselectedState",
+				"speed": 100
 			},
 			{
 				"startIndex":0,
 				"endIndex": 1,
-				"name": "switchSelectedState"
+				"name": "switchSelectedState",
+				"speed": 100
 			}
 		],
 		"frameHeight": 98,
 		"frameWidth": 152.2,
-		"name": "stateNodeTemplate",
-		"speed": 100
+		"name": "stateNodeTemplate"
 	},
 	{
 		"animations": [
 			{
 				"startIndex": 2,
 				"endIndex": 0,
-				"name": "switchUnselectedInitalState"
+				"name": "switchUnselectedInitalState",
+				"speed": 100
 			},
 			{
 				"startIndex": 0,
 				"endIndex": 2,
-				"name": "switchSelectedInitalState"
+				"name": "switchSelectedInitalState",
+				"speed": 100
 			}
 		],
 		"frameHeight": 99,
 		"frameWidth": 100,
-		"name": "initialStateNodeTemplate",
-		"speed": 100
+		"name": "initialStateNodeTemplate"
 	},
 	{
 		"animations": [
 			{
 				"startIndex": 0,
 				"endIndex": 1,
-				"name": "switchUnselectedFinalState"
+				"name": "switchUnselectedFinalState",
+				"speed": 100
 			},
 			{
 				"startIndex": 1,
 				"endIndex": 3,
-				"name": "switchSelectedFinalState"
+				"name": "switchSelectedFinalState",
+				"speed": 100
 			}
 		],
 		"frameHeight": 99,
 		"frameWidth": 100,
-		"name": "finalStateNodeTemplate",
-		"speed": 100
+		"name": "finalStateNodeTemplate"
 	},
 	{
 		"animations": [
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "switchUnselectedStateNodeLink"
+				"name": "switchUnselectedStateNodeLink",
+				"speed": 100
 			},
 			{
 				"startIndex": 0,
 				"endIndex": 1,
-				"name": "switchSelectedStateNodeLink"
+				"name": "switchSelectedStateNodeLink",
+				"speed": 100
 			}
 		],
 		"frameHeight": 15,
 		"frameWidth": 332,
-		"name": "stateNodeLinkTemplate",
-		"speed": 100
+		"name": "stateNodeLinkTemplate"
 	},
 	{
 		"animations": [
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "buttonSelectedLaunch"
+				"name": "buttonSelectedLaunch",
+				"speed": 10
 			}
 		],
 		"frameHeight": 44,
 		"frameWidth": 181,
-		"name": "launchGame",
-		"speed": 10
+		"name": "launchGame"
 	},
 	{
 		"animations": [
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "switchUnselectedStateNodeLinkArrow"
+				"name": "switchUnselectedStateNodeLinkArrow",
+				"speed": 100
 			},
 			{
 				"startIndex": 0,
 				"endIndex": 1,
-				"name": "switchSelectedStateNodeLinkArrow"
+				"name": "switchSelectedStateNodeLinkArrow",
+				"speed": 100
 			}
 		],
 		"frameHeight": 15,
 		"frameWidth": 15,
-		"name": "stateNodeLinkArrowTemplate",
-		"speed": 100
+		"name": "stateNodeLinkArrowTemplate"
 	},
 	{
 		"animations": [
 			{
 				"startIndex": 0,
 				"endIndex": 3,
-				"name": "load"
+				"name": "load",
+				"speed": 10
 			}
 		],
 		"frameHeight": 50,
 		"frameWidth": 50,
-		"name": "contextLoader",
-		"speed": 10
+		"name": "contextLoader"
 	}
 ]
