@@ -43,7 +43,7 @@
 		"yPosition": 180,
 		"yScale": 1,
 		"type": "sprite | image",
-		"cloneY":4
+		"cloneY":5
 	},
 	{
 		"anchor": false,
@@ -59,7 +59,7 @@
 		"yPosition": 170,
 		"yScale": 0.8,
       	"type": "text",
-      	"cloneY":4
+      	"cloneY":5
 	},
 	{
 		"anchor": false,

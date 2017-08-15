@@ -38,12 +38,13 @@
 		"name": "fly",
 		"priority": 2,
 		"width": 120,
-		"xPosition": 420,
+		"xPosition": 60,
 		"xScale": 1,
-		"yPosition": 312,
+		"yPosition": 60,
 		"yScale": 1,
 		"type": "sprite | animation",
-		"start": true
+		"start": true,
+		"cloneXY":5
 	},
 	{
 		"anchor": false,
