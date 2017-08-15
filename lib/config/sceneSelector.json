@@ -15,7 +15,7 @@
         "Id": "8e78a92b-ce35-4c0e-6397-2a24fa428ca5",
         "name": "preloaderScene",
         "priority":1,
-        "repeat":true
+        "repeat":false
     },
     {
         "Id": "526a0b38-8e72-42b0-377f-9524912c06ad",

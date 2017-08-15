@@ -21,43 +21,7 @@
 	},
 	{
 		"file": "../publish/assets/fly.png",
-		"name": "fly1"
-	},
-	{
-		"file": "../publish/assets/fly.png",
-		"name": "fly2"
-	},
-	{
-		"file": "../publish/assets/fly.png",
-		"name": "fly3"
-	},
-	{
-		"file": "../publish/assets/fly.png",
-		"name": "fly4"
-	},
-	{
-		"file": "../publish/assets/fly.png",
-		"name": "fly5"
-	},
-	{
-		"file": "../publish/assets/fly.png",
-		"name": "fly6"
-	},
-	{
-		"file": "../publish/assets/fly.png",
-		"name": "fly7"
-	},
-	{
-		"file": "../publish/assets/fly.png",
-		"name": "fly8"
-	},
-	{
-		"file": "../publish/assets/fly.png",
-		"name": "fly9"
-	},
-	{
-		"file": "../publish/assets/fly.png",
-		"name": "fly10"
+		"name": "fly"
 	},
 	{
 		"file": "../publish/assets/startEndStateNodeTemplate.png",
