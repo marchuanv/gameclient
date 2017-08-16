@@ -152,13 +152,26 @@
 			{
 				"startIndex": 1,
 				"endIndex": 0,
-				"name": "buttonSelectedLaunch",
+				"name": "buttonSelectedPreview",
 				"speed": 10
 			}
 		],
 		"frameHeight": 44,
 		"frameWidth": 181,
-		"name": "launchGame"
+		"name": "preview"
+	},
+	{
+		"animations": [
+			{
+				"startIndex": 1,
+				"endIndex": 0,
+				"name": "buttonSelectedPublish",
+				"speed": 10
+			}
+		],
+		"frameHeight": 44,
+		"frameWidth": 181,
+		"name": "publish"
 	},
 	{
 		"animations": [

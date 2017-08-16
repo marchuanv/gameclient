@@ -40,8 +40,12 @@
 		"name": "stateNodeLinkTemplate"
 	},
 	{
-		"file": "../publish/assets/launchGame.png",
-		"name": "launchGame"
+		"file": "../publish/assets/preview.png",
+		"name": "preview"
+	},
+	{
+		"file": "../publish/assets/publish.png",
+		"name": "publish"
 	},
 	{
 		"file": "../publish/assets/stateNodeLinkArrowTemplate.png",
