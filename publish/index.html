@@ -12,8 +12,11 @@
 		<script type="text/javascript">
 			window.onload = function(){
 				factory(function(_instance){
-					_instance.phaserGame(function(game){
-						game.start();
+					_instance.phaserGame(function(gameInstance){
+						_instance.sceneSelector(function(_sceneInstance){
+							_sceneInstance.next();
+							gameInstance.start();
+						});
 					});
 				});
 			};

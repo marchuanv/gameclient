@@ -6,14 +6,10 @@
 	<body>
 		<script type="text/javascript">
 			window.onload = function() {
-				thread(function(){
-					factory(function(_instance){
-						_instance.phaserGame(function(_instanceGame){
-							_instanceGame.start("designerScene");
-						});
+				factory(function(_instance){
+					_instance.phaserGame(function(_instanceGame){
+						_instanceGame.start("designerScene");
 					});
-				},function frame(){
-
 				});
 			};
 		</script>
