@@ -20,14 +20,14 @@
 		"hasAnimations": false,
 		"height": 250,
 		"isStatic": true,
-		"name": "timerText",
+		"name": "timer",
 		"priority": 2,
 		"width": 500,
 		"xPosition": 20,
 		"xScale": 3,
 		"yPosition": 20,
 		"yScale": 3,
-		"type": "text"
+		"type": "text | timer"
 	},
 	{
 		"anchor": true,
