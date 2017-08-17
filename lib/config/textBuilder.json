@@ -8,10 +8,10 @@
 	},
 	{
 		"align": "center",
-		"fill": "#9343ff",
+		"fill": "#000000",
 		"font": "12px Arial",
 		"name": "timer",
-		"text": "00:00:00"
+		"text": "00:00"
 	},
 	{
 		"align": "center",

@@ -27,7 +27,6 @@
 		"xScale": 3,
 		"yPosition": 20,
 		"yScale": 3,
-		"intervalTimeoutMilliseconds":1000,
 		"totalTimeoutMilliseconds":120000,
 		"type": "text | timer"
 	},
@@ -46,7 +45,8 @@
 		"yScale": 1,
 		"type": "sprite | animation",
 		"start": true,
-		"cloneXY":5
+		"cloneXY":5,
+		"score":1
 	},
 	{
 		"anchor": false,
