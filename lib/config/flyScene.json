@@ -27,6 +27,8 @@
 		"xScale": 3,
 		"yPosition": 20,
 		"yScale": 3,
+		"intervalTimeoutMilliseconds":1000,
+		"totalTimeoutMilliseconds":120000,
 		"type": "text | timer"
 	},
 	{
