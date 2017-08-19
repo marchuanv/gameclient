@@ -22,6 +22,7 @@ function compress(fileName, jsCode){
 
 function Release(){
 	this.create = function(){
+		
 		console.log();
 		console.log('----------------------< CLEANUP >---------------------');
 		common.enumerateDir(releaseDir, ".js", function (resolvedPath) {
@@ -43,87 +44,75 @@ function Release(){
 		},function fail(){
 		});
 
-
 		console.log();
 		console.log('----------------------< GENERATING INTERNAL LIBRARIES >---------------------');
 		common.enumerateDir(libDir, ".js,.css", function item (jsResolvedPath) {
+			common.readFile(jsResolvedPath, function complete(data){ //DO JS FILES
+				
+				var newData = data;
+				var releaseFilePath = jsResolvedPath.replace("lib","release");
+				var startExp = '/*[';
+				var endExp = ']*/';
+				var startIndex = newData.indexOf('/*[');
+				var startIndexOffset =  startIndex+ startExp.length;
+				var endIndex = newData.indexOf(']*/',startIndex);
+				var endIndexOffset = endIndex + endExp.length-3;
+				var header  = newData.substring(startIndex, endIndex + endExp.length);
+				if (header.startsWith('/*[')){
+					var arguments = newData.substring(startIndexOffset, endIndexOffset);
+					var factoryDepArray = arguments.split(',');
+					var functionName = common.getFileName(releaseFilePath);
+					functionName = functionName.replace(".js","");
 
-			var isSceneTemplate = false;
-			if (jsResolvedPath.indexOf("templates") >= 0 && jsResolvedPath.endsWith("Scene.js") >= 0){
-				isSceneTemplate = true;
-			}
-			if (!isSceneTemplate){
-				common.readFile(jsResolvedPath, function complete(data){ //DO JS FILES
-					
-					var newData = data;
-					var releaseFilePath = jsResolvedPath.replace("lib","release");
-					var startExp = '/*[';
-					var endExp = ']*/';
-					var startIndex = newData.indexOf('/*[');
-					var startIndexOffset =  startIndex+ startExp.length;
-					var endIndex = newData.indexOf(']*/',startIndex);
-					var endIndexOffset = endIndex + endExp.length-3;
-					var header  = newData.substring(startIndex, endIndex + endExp.length);
-					if (header.startsWith('/*[')){
-						var arguments = newData.substring(startIndexOffset, endIndexOffset);
-						var factoryDepArray = arguments.split(',');
-						var functionName = common.getFileName(releaseFilePath);
-						functionName = functionName.replace(".js","");
+					newData = newData.replace(header,"");
+					arguments = arguments.replace(/\ /g, "");
 
-						newData = newData.replace(header,"");
-						arguments = arguments.replace(/\ /g, "");
-
-						var isClass = false;
-						if (newData.indexOf("/*CLASS*/") >= 0){
-							isClass = true;
-							newData = newData.replace("/*CLASS*/","");
-						}
-
-						var isSingleton = false;
-						if (newData.indexOf("/*SINGLETON*/") >= 0){
-							isSingleton = true;
-							newData = newData.replace("/*SINGLETON*/","");
-						}
-
-						newData = "factory(function(factory){\r\n factory.register("+isClass+", "+isSingleton+", function " +  functionName + "("+arguments+"){\r\n" + newData + " \r\n }, function error(err){})});";
-						newData = beautify(newData, { indent_size: 2 });
+					var isClass = false;
+					if (newData.indexOf("/*CLASS*/") >= 0){
+						isClass = true;
+						newData = newData.replace("/*CLASS*/","");
 					}
 
-					common.saveFile(releaseFilePath, newData, function () {
-						console.log("code file saved at ",releaseFilePath);
-					}, function fail(err){
-						console.log("ERROR:",err);
-					});
-				}, function fail(){
+					var isSingleton = false;
+					if (newData.indexOf("/*SINGLETON*/") >= 0){
+						isSingleton = true;
+						newData = newData.replace("/*SINGLETON*/","");
+					}
+
+					newData = "factory(function(factory){\r\n factory.register("+isClass+", "+isSingleton+", function " +  functionName + "("+arguments+"){\r\n" + newData + " \r\n }, function error(err){})});";
+					newData = beautify(newData, { indent_size: 2 });
+				}
+
+				common.saveFile(releaseFilePath, newData, function () {
+					console.log("code file saved at ",releaseFilePath);
+				}, function fail(err){
+					console.log("ERROR:",err);
 				});
-			}
+			}, function fail(){
+			});
 		},function complete(){ //DO CONFIGURATIONS
 			
 			console.log();
 			console.log('----------------------< GENERATING CONFIG >---------------------');
 			
 			common.enumerateDir(libDir, ".json", function (jsonResolvedPath) {
-				var isSceneTemplate = false;
-				if (jsonResolvedPath.indexOf("templates") >= 0 && jsonResolvedPath.endsWith("Scene.json")){
-					isSceneTemplate = true;
-				}
-				if (!isSceneTemplate){
-					var releaseFilePath = jsonResolvedPath.replace("lib","release");
-					var functionName = common.getFileName(releaseFilePath);
-					functionName = functionName.replace(".json","Config");
-					releaseFilePath = releaseFilePath.replace(".json","Config.js");
-					common.readFile(jsonResolvedPath, function(jsonStr){
-						var obj = JSON.parse(jsonStr);
-						var _newConfig = JSON.stringify(obj);
-						var config = "factory(function(factory){ factory.register(false, false, function " +  functionName + "(){\r\n return '"+_newConfig+"'; \r\n }, function error(err){})});";
-						common.saveFile(releaseFilePath, config, function saved(){
-							console.log("config json file saved at ",releaseFilePath);
-						}, function fail(){
-						});
-
-					}, function fail(){
+				var releaseFilePath = jsonResolvedPath.replace("lib","release");
+				var functionName = common.getFileName(releaseFilePath);
+				functionName = functionName.replace(".json","Config");
+				releaseFilePath = releaseFilePath.replace(".json","Config.js");
+				common.readFile(jsonResolvedPath, function(jsonStr){
+					var obj = JSON.parse(jsonStr);
+					var _newConfig = JSON.stringify(obj);
+					var config = "factory(function(factory){ factory.register(false, false, function " +  functionName + "(){\r\n return '"+_newConfig+"'; \r\n }, function error(err){})});";
+					common.saveFile(releaseFilePath, config, function saved(){
+						console.log("config json file saved at ",releaseFilePath);
+					}, function fail(msg){
+						console.log("ERROR: could not save config for " + releaseFilePath + ", Message: " + msg);
 					});
-				}
+
+				}, function fail(msg){
+					console.log("ERROR: could not generate config for " + releaseFilePath + ", Message: " + msg);
+				});
 			},function complete(){
 				console.log();
 				console.log('----------------------< GENERATE EXTERNAL LIBRARIES >---------------------');

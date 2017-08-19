@@ -1,0 +1,130 @@
+{
+	"designerScene":{
+		"priorities":[
+			{
+				"name":"initialStateNodeTemplate",
+				"priority":1
+			},
+			{
+				"name":"stateNodeTemplate",
+				"priority":1
+			},
+			{
+				"name":"stateNodeLinkTemplate",
+				"priority":2
+			},
+			{
+				"name":"finalStateNodeTemplate",
+				"priority":1
+			},
+			{
+		        "name": "diagramMenu",
+		        "priority": 3
+		    },
+			{
+				"name":"contextLoader",
+				"priority":1
+			},
+			{
+				"name":"publish",
+				"priority":3
+			},
+			{
+				"name":"preview",
+				"priority":3
+			},
+			{
+				"name":"stateNodeLinkArrowTemplate",
+				"priority":2
+			}
+		]
+	},
+	"capturePlayerScene":{
+		"priorities":[
+			{
+				"name": "cursor",
+				"priority": 1
+			},
+			{
+				"name": "playerCaptureText",
+				"priority": 2
+			},
+			{
+				"name": "playerCapture",
+				"priority": 3
+			},
+			{
+				"name": "submitButton",
+				"priority": 4
+			},
+			{
+				"name": "scoreboardBackground",
+				"priority": 5
+			}
+		]
+	},
+	"preloaderScene":{
+		"priorities":[
+			{
+				"name": "preloader",
+				"priority":2
+			},
+			{
+				"name": "cursor",
+				"priority":1
+			}
+		]
+	},
+	"scoreboardScene":{
+		"priorities":[
+			{
+				"name": "cursor",
+				"priority": 0
+			},
+			{
+				"name": "scoreboardHeading",
+				"priority": 1
+			},
+			{
+				"name": "playerScore",
+				"priority": 15
+			},
+			{
+				"name": "playerScoreText",
+				"priority": 5
+			},
+			{
+				"name": "closeButton",
+				"priority": 19
+			},
+			{
+				"name": "playButton",
+				"priority": 19
+			},
+			{
+				"name": "scoreboardBackground",
+				"priority": 21
+			}
+		]
+	},
+	"flyScene":{
+		"priorities":[
+			{
+				"name": "cursor",
+				"priority": 1
+			},
+			{
+				"name": "timer",
+				"priority": 2
+			},
+			{
+				"name": "fly",
+				"priority": 2
+			},
+			{
+				"name": "flyBackground",
+				"priority": 3
+			}
+		]
+	}
+}

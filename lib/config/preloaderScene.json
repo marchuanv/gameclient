@@ -5,14 +5,12 @@
 		"hasAnimations": true,
 		"height": 600,
 		"name": "preloader",
-		"priority": 1,
 		"width": 800,
 		"xPosition": 0,
 		"xScale": 1,
 		"yPosition": 0,
 		"yScale": 1,
-		"type": "sprite | animation",
-		"priority":2
+		"type": "sprite | animation"
 	},
 	{
 		"anchor": true,
@@ -20,13 +18,11 @@
 		"hasAnimations": false,
 		"height": 40,
 		"name": "cursor",
-		"priority": 2,
 		"width": 40,
 		"xPosition": 0,
 		"xScale": 1,
 		"yPosition": 0,
 		"yScale": 1,
-		"type": "image",
-		"priority":1
+		"type": "image"
 	}
 ]
