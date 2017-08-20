@@ -87,11 +87,59 @@
 			},
 			{
 				"name": "playerScore",
-				"priority": 15
+				"priority": 11
+			},
+			{
+				"name": "playerScore2",
+				"priority": 12,
+				"xOffset":0,
+				"yOffset":52
+			},
+			{
+				"name": "playerScore3",
+				"priority": 13,
+				"xOffset":0,
+				"yOffset":104
+			},
+			{
+				"name": "playerScore4",
+				"priority": 14,
+				"xOffset":0,
+				"yOffset":158
+			},
+			{
+				"name": "playerScore5",
+				"priority": 15,
+				"xOffset":0,
+				"yOffset":210
 			},
 			{
 				"name": "playerScoreText",
 				"priority": 5
+			},
+			{
+				"name": "playerScoreText2",
+				"priority": 6,
+				"xOffset":0,
+				"yOffset":52
+			},
+			{
+				"name": "playerScoreText3",
+				"priority": 7,
+				"xOffset":0,
+				"yOffset":104
+			},
+			{
+				"name": "playerScoreText4",
+				"priority": 8,
+				"xOffset":0,
+				"yOffset":158
+			},
+			{
+				"name": "playerScoreText5",
+				"priority": 9,
+				"xOffset":0,
+				"yOffset":210
 			},
 			{
 				"name": "closeButton",
