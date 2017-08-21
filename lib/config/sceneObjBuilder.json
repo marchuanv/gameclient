@@ -162,8 +162,8 @@
 				"priority": 1
 			},
 			{
-				"name": "timer",
-				"priority": 2
+				"name": "gameTimer",
+				"priority": 1
 			},
 			{
 				"name": "fly",
@@ -172,7 +172,7 @@
 			{
 				"name": "fly2",
 				"priority": 4,
-				"xOffset":130,
+				"xOffset":180,
 				"yOffset":130
 			},
 			{
@@ -184,14 +184,38 @@
 			{
 				"name": "fly4",
 				"priority": 6,
-				"xOffset":390,
-				"yOffset":390
+				"xOffset":230,
+				"yOffset":190
 			},
 			{
 				"name": "fly5",
 				"priority": 7,
 				"xOffset":520,
-				"yOffset":500
+				"yOffset":100
+			},
+			{
+				"name": "fly6",
+				"priority": 8,
+				"xOffset":130,
+				"yOffset":170
+			},
+			{
+				"name": "fly7",
+				"priority": 9,
+				"xOffset":280,
+				"yOffset":200
+			},
+			{
+				"name": "fly8",
+				"priority": 10,
+				"xOffset":400,
+				"yOffset":110
+			},
+			{
+				"name": "fly9",
+				"priority": 11,
+				"xOffset":520,
+				"yOffset":100
 			},
 			{
 				"name": "flyBackground",

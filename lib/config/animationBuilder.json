@@ -58,13 +58,13 @@
 				"endIndex": 15,
 				"name": "flyAlive",
 				"repeat": true,
-				"speed": 10
+				"speed": 50
 			},
 			{
 				"startIndex": 16,
 				"endIndex": 21,
 				"name": "flyDead",
-				"speed": 10
+				"speed": 8
 			}
 		],
 		"frameHeight": 128,
