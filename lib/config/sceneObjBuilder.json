@@ -166,6 +166,10 @@
 				"priority": 1
 			},
 			{
+				"name": "flyMoveTimer",
+				"priority": 1
+			},
+			{
 				"name": "fly",
 				"priority": 3
 			},

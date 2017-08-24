@@ -45,12 +45,24 @@
 	},
 	{
 		"enabled": true,
-		"name": "gameTimer",
+		"name": "gameEndTimer",
 		"totalTimeoutMilliseconds":120000,
-		"type": "text | timer",
 		"xPosition": 20,
-		"xScale": 3,
 		"yPosition": 20,
-		"yScale": 3
+		"xScale": 3,
+		"yScale": 3,
+		"repeat":false,
+		"type": "text | timer"
+	},
+	{
+		"enabled": true,
+		"name": "flyMoveTimer",
+		"totalTimeoutMilliseconds":1000,
+		"xPosition": 20,
+		"yPosition": 20,
+		"xScale": 3,
+		"yScale": 3,
+		"repeat":true,
+		"type": "timer"
 	}
 ]

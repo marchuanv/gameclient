@@ -10,7 +10,7 @@
 		"align": "center",
 		"fill": "#000000",
 		"font": "12px Arial",
-		"name": "gameTimer",
+		"name": "gameEndTimer",
 		"text": "00:00"
 	},
 	{
