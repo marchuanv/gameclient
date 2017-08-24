@@ -183,7 +183,7 @@
 				"name": "fly3",
 				"priority": 5,
 				"xOffset":260,
-				"yOffset":260
+				"yOffset":20
 			},
 			{
 				"name": "fly4",
@@ -194,7 +194,7 @@
 			{
 				"name": "fly5",
 				"priority": 7,
-				"xOffset":520,
+				"xOffset":200,
 				"yOffset":100
 			},
 			{
@@ -212,13 +212,13 @@
 			{
 				"name": "fly8",
 				"priority": 10,
-				"xOffset":400,
+				"xOffset":127,
 				"yOffset":110
 			},
 			{
 				"name": "fly9",
 				"priority": 11,
-				"xOffset":520,
+				"xOffset":300,
 				"yOffset":100
 			},
 			{

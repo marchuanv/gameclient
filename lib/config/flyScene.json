@@ -21,13 +21,15 @@
 		"name": "fly",
 		"height": 10,
 		"width": 60,
-		"xPosition": 60,
+		"xPosition": 300,
 		"yPosition": 300,
 		"xScale": 0.1,
 		"yScale": 0.5,
 		"type": "sprite | animation",
 		"start": true,
-		"score":1
+		"score":1,
+		"lowMoveFactor":20,
+		"highMoveFactor":50
 	},
 	{
 		"anchor": false,
