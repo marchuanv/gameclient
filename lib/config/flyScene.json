@@ -29,7 +29,7 @@
 		"start": true,
 		"score":1,
 		"lowMoveFactor":20,
-		"highMoveFactor":50
+		"highMoveFactor":200
 	},
 	{
 		"anchor": false,
