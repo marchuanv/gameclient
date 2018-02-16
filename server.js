@@ -5,7 +5,7 @@ var app = express();
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'lib')));
-app.use(express.static(path.join(__dirname, 'node_modules/utils/utils.js')));
+app.use(express.static(path.join(__dirname, 'node_modules/utils/')));
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
