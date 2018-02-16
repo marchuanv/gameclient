@@ -17,6 +17,7 @@
     "utils": "git+https://github.com/marchuanv/utils.git"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "preinstall": "npm update"
   }
 }
