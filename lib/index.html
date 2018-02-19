@@ -10,11 +10,11 @@
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function() {
 				    if (this.readyState == 4 && this.status == 200) {
-						var designer=JSON.parse(xhttp.responseText);
-						designer.launch();
+						var scene=JSON.parse(xhttp.responseText);
+						scene.start('designerScene');
 				    }
 				};
-				xhttp.open("GET", "game", true);
+				xhttp.open("GET", "scene", true);
 				xhttp.send();
 			};
 		</script>
