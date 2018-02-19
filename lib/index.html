@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Scene Designer</title>
+		<title>Game Designer</title>
 		<script type="text/javascript" src="utils.js"></script>
 	</head>
 	<body>
@@ -9,8 +9,8 @@
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function() {
 				    if (this.readyState == 4 && this.status == 200) {
-					var game=JSON.parse(xhttp.responseText);
-					game.start("designerScene");
+						var designer=JSON.parse(xhttp.responseText);
+						designer.launch();
 				    }
 				};
 				xhttp.open("GET", "game", true);
