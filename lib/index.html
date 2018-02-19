@@ -6,21 +6,15 @@
 	<body>
 		<script type="text/javascript">
 			window.onload = function() {
-				
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function() {
 				    if (this.readyState == 4 && this.status == 200) {
-				      console.log(xhttp.responseText);
+					var game=JSON.parse(xhttp.responseText);
+					game.start("designerScene");
 				    }
 				};
-				xhttp.open("GET", "filename", true);
+				xhttp.open("GET", "game", true);
 				xhttp.send();
-				
-// 				factory(function(_instance){
-// 					_instance.phaserGame(function(_instanceGame){
-// 						_instanceGame.start("designerScene");
-// 					});
-// 				});
 			};
 		</script>
 	</body>
