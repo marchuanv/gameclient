@@ -7,6 +7,12 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'lib')));
 app.use(express.static(path.join(__dirname, 'node_modules/utils/')));
 
+app.get('/game',function(req,res){
+  res.status(200).send({
+    status:'initialised'
+  });
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log('listening on port', port);
