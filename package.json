@@ -14,7 +14,8 @@
     "express": "^4.15.2",
     "js-beautify": "^1.6.12",
     "uglify-js": "^3.0.23",
-    "utils": "git+https://github.com/marchuanv/utils.git"
+    "utils": "git+https://github.com/marchuanv/utils.git",
+    "messagebus": "git+https://github.com/marchuanv/messagebus.git"
   },
   "scripts": {
     "start": "node server.js",
