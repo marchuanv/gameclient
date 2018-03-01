@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "postinstall": "npm update",
+    "preinstall": "npm update",
     "start": "node server.js"
   },
   "engines": {
