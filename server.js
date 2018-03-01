@@ -8,6 +8,6 @@ require('messagebus').create(function(messageBus) {
 	messageBus.subscribe('getPhaserGame', applicationId, function(data) {
 		console.log("PHASER GAME INSTANCE:",data);
 	});
-	messageBus.public('createPhaserGame', applicationId, { arguments:[]} );
+	messageBus.publish('createPhaserGame', applicationId, {});
   });
 });
