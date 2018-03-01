@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/marchuanv/gamedesigner#readme",
   "dependencies": {
-    "messagebus": "git+https://github.com/marchuanv/messagebus.git",
     "utils": "git+https://github.com/marchuanv/utils.git",
+    "messagebus": "git+https://github.com/marchuanv/messagebus.git",
     "archiver": "^2.0.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.2",
