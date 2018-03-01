@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "preinstall": "rm -rf node_modules/* node_modules/.*.DELETE node_modules/.bin | npm update",
+    "preinstall": "rm -rf node_modules/.messagebus.DELETE/node_modules/.bin | npm update",
     "start": "node server.js"
   },
   "engines": {
