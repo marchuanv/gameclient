@@ -6,7 +6,7 @@ require('messagebus').create(function(messageBus) {
   });
   messageBus.subscribe('libraryregistered','',function(){
 	messageBus.subscribe('getPhaserGame', applicationId, function(data) {
-		data.getStuff();
+		console.log("PHASER GAME INSTANCE:",data);
 	});
 	messageBus.publish('createPhaserGame', applicationId, {});
   });
