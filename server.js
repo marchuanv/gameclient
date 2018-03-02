@@ -3,7 +3,7 @@ require('messagebus').create(function(messageBus) {
 
   messageBus.publish('registerlibrary', '', { 
   	Id: applicationId, 
-  	javascript: "function PhaserGame(){ this.isStarted=true; }"
+  	javascript: "function PhaserGame(){ this.isStarted=true; this.getStuff=function(){} }"
   });
   messageBus.subscribe('libraryregistered','',function(){
   	messageBus.subscribe('PhaserGame', applicationId, function(data) {
