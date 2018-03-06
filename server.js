@@ -24,7 +24,6 @@ const objects=[
     imageBuilder,
     shapeBuilderConfig,
     shapeBuilder,
-    timerBuilderConfig,
     timerBuilder,
     spriteBuilderConfig,
     spriteBuilder,
