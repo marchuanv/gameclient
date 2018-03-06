@@ -1,26 +1,20 @@
 const applicationId='gamedesigner';
 
-const sceneObjBuilderConfig =require('./lib/config/sceneObjBuilderConfig.js');
+const sceneObjBuilderConfig =require('./lib/config/sceneObjBuilder.json');
+const spriteBuilderConfig=require('./lib/config/spriteBuilder.json');
+const animationBuilderConfig=require('./lib/config/animationBuilder.json');
+const textBuilderConfig=require('./lib/config/textBuilder.json');
+const imageBuilderConfig=require('./lib/config/imageBuilder.json');
+const shapeBuilderConfig=require('./lib/config/shapeBuilder.json');
+const timerBuilderConfig=require('./lib/config/timerBuilder.json');
+
 const sceneObjBuilder=require('./lib/game/sceneObjBuilder.js');
-
-const spriteBuilderConfig=require('./lib/config/spriteBuilderConfig.js');
 const spriteBuilder=require('./lib/game/spriteBuilder.js');
-
-const animationBuilderConfig=require('./lib/config/animationBuilderConfig.js');
 const animationBuilder=require('./lib/game/animationBuilder.js');
-
-const textBuilderConfig=require('./lib/config/textBuilderConfig.js');
 const textBuilder=require('./lib/game/textBuilder.js');
-
-const imageBuilderConfig=require('./lib/config/imageBuilderConfig.js');
 const imageBuilder=require('./lib/game/imageBuilder.js');
-
-const shapeBuilderConfig=require('./lib/config/shapeBuilderConfig.js');
 const shapeBuilder=require('./lib/game/shapeBuilder.js');
-
-const timerBuilderConfig=require('./lib/config/timerBuilderConfig.js');
 const timerBuilder=require('./lib/game/timerBuilder.js');
-
 const cache =require('./cache.js');
 
 const objects=[
