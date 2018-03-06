@@ -1,5 +1,7 @@
-const applicationId='gamedesigner';
 
+
+
+const applicationId='gamedesigner';
 const sceneObjBuilderConfig =require('./lib/config/sceneObjBuilder.json');
 const spriteBuilderConfig=require('./lib/config/spriteBuilder.json');
 const animationBuilderConfig=require('./lib/config/animationBuilder.json');
