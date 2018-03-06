@@ -1,3 +1,4 @@
+reset
 export thisserveraddress
 export publishaddress
 publishaddress='localhost:3000'
