@@ -14,3 +14,6 @@ cd ../gamedesigner/
 git clean -fdx
 npm install
 npm update
+
+export thisserveraddress
+export publishaddress
