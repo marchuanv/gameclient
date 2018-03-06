@@ -1,14 +1,11 @@
-
-
-
 const applicationId='gamedesigner';
-const sceneObjBuilderConfig =require('./lib/config/sceneObjBuilder.json');
-const spriteBuilderConfig=require('./lib/config/spriteBuilder.json');
-const animationBuilderConfig=require('./lib/config/animationBuilder.json');
-const textBuilderConfig=require('./lib/config/textBuilder.json');
-const imageBuilderConfig=require('./lib/config/imageBuilder.json');
-const shapeBuilderConfig=require('./lib/config/shapeBuilder.json');
-
+const sceneObjBuilderConfig =require('./lib/config/sceneObjBuilder.js');
+const spriteBuilderConfig=require('./lib/config/spriteBuilder.js');
+const animationBuilderConfig=require('./lib/config/animationBuilder.js');
+const textBuilderConfig=require('./lib/config/textBuilder.js');
+const imageBuilderConfig=require('./lib/config/imageBuilder.js');
+const shapeBuilderConfig=require('./lib/config/shapeBuilder.js');
+const designerSceneConfig=require('./lib/config/designerScene.js');
 const sceneObjBuilder=require('./lib/game/sceneObjBuilder.js');
 const spriteBuilder=require('./lib/game/spriteBuilder.js');
 const animationBuilder=require('./lib/game/animationBuilder.js');
@@ -30,7 +27,8 @@ const objects=[
     spriteBuilderConfig,
     spriteBuilder,
     sceneObjBuilderConfig,
-    sceneObjBuilder
+    sceneObjBuilder,
+    designerSceneConfig
 ];
 
 require('messagebus').create(function(messageBus) {
