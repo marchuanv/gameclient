@@ -6,7 +6,6 @@ const animationBuilderConfig=require('./lib/config/animationBuilder.json');
 const textBuilderConfig=require('./lib/config/textBuilder.json');
 const imageBuilderConfig=require('./lib/config/imageBuilder.json');
 const shapeBuilderConfig=require('./lib/config/shapeBuilder.json');
-const timerBuilderConfig=require('./lib/config/timerBuilder.json');
 
 const sceneObjBuilder=require('./lib/game/sceneObjBuilder.js');
 const spriteBuilder=require('./lib/game/spriteBuilder.js');
