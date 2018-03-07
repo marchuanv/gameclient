@@ -1,3 +1,5 @@
+const utils = require('utils');
+
 const applicationId='gamedesigner';
 
 const sceneObjBuilderConfig =require('./lib/config/sceneObjBuilder.js');
@@ -37,7 +39,8 @@ const objects=[
     shapeBuilder,
     timerBuilder,
     spriteBuilder,
-    sceneObjBuilder
+    sceneObjBuilder,
+    cache=utils.createCache()
 ];
 
 require('messagebus').create(function(messageBus) {
