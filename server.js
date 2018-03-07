@@ -8,6 +8,7 @@ const imageBuilderConfig=require('./lib/config/imageBuilder.js');
 const shapeBuilderConfig=require('./lib/config/shapeBuilder.js');
 const designerSceneConfig=require('./lib/config/designerScene.js');
 
+const sceneManager=require('./lib/game/sceneManager.js');
 const sceneObjBuilder=require('./lib/game/sceneObjBuilder.js');
 const spriteBuilder=require('./lib/game/spriteBuilder.js');
 const animationBuilder=require('./lib/game/animationBuilder.js');
@@ -28,14 +29,15 @@ const config=[
 ];
 
 const objects=[
+    designerScene,
+    sceneManager,
     animationBuilder,
     textBuilder,
     imageBuilder,
     shapeBuilder,
     timerBuilder,
     spriteBuilder,
-    sceneObjBuilder,
-    designerScene
+    sceneObjBuilder
 ];
 
 require('messagebus').create(function(messageBus) {
