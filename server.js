@@ -40,8 +40,8 @@ require('messagebus').create(function(messageBus) {
   messageBus.subscribe('libraryregistered', '', function(data){
     var registeredLib=data.class;
     if (registeredLib=="DesignerScene"){
-      messageBus.subscribe('getDesignerScene', applicationId, function(data) {
-        console.log("DESIGNER SCENE INSTANCE:", data);
+      messageBus.subscribe('getDesignerScene', applicationId, function(_data) {
+        console.log("DESIGNER SCENE INSTANCE:", _data);
       });
       messageBus.publish('createDesignerScene', applicationId, {});
     }
