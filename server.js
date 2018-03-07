@@ -43,6 +43,10 @@ require('messagebus').create(function(messageBus) {
       messageBus.subscribe('getDesignerScene', applicationId, function(_data) {
         console.log("DESIGNER SCENE INSTANCE:", _data);
       });
+      messageBus.subscribe('getDesignerScene', applicationId, function(_data) {
+        console.log("INSTANCE WAS EMPTY:", _data.class);
+      });
+
       messageBus.publish('createDesignerScene', applicationId, {});
     }
   });
