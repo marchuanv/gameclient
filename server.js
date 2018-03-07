@@ -37,23 +37,25 @@ const objects=[
 
 require('messagebus').create(function(messageBus) {
 
+  messageBus.subscribe('invalidlibrary', '', function(data){
+    console.log("LIBRARY NOT VALID:",data.javascript);
+  });
   messageBus.subscribe('libraryregistered', '', function(data){
     var registeredLib=data.class;
     if (registeredLib=="DesignerScene"){
+      
+      messageBus.subscribe('emptyDesignerScene', applicationId, function(data){
+        console.log("EMPTY INSTANCE FOR DesignerScene:",data.class);
+      });
+
       messageBus.subscribe('getDesignerScene', applicationId, function(_data) {
         console.log("DESIGNER SCENE INSTANCE:", _data);
       });
-      messageBus.subscribe('getDesignerScene', applicationId, function(_data) {
-        console.log("INSTANCE WAS EMPTY:", _data.class);
-      });
+      
       messageBus.publish('createDesignerScene', applicationId, {});
     }
   });
 
-  messageBus.subscribe('invalidlibrary', '', function(data){
-    console.log("LIBRARY NOT VALID:".data.class);
-  });
-  
   for (var i = objects.length - 1; i >= 0; i--) {
       const func=objects[i];
       messageBus.publish('registerlibrary', '', {
