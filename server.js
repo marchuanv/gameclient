@@ -46,9 +46,12 @@ require('messagebus').create(function(messageBus) {
       messageBus.subscribe('getDesignerScene', applicationId, function(_data) {
         console.log("INSTANCE WAS EMPTY:", _data.class);
       });
-
       messageBus.publish('createDesignerScene', applicationId, {});
     }
+  });
+
+  messageBus.subscribe('invalidlibrary', '', function(data){
+    console.log("LIBRARY NOT VALID:".data.class);
   });
   
   for (var i = objects.length - 1; i >= 0; i--) {
