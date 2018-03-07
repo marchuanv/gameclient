@@ -17,21 +17,24 @@ const shapeBuilder=require('./lib/game/shapeBuilder.js');
 const timerBuilder=require('./lib/game/timerBuilder.js');
 const designerScene=require('./lib/designer/designerScene.js');
 
-const objects=[
+const config=[
     animationBuilderConfig,
-    animationBuilder,
     textBuilderConfig,
-    textBuilder,
     imageBuilderConfig,
-    imageBuilder,
     shapeBuilderConfig,
+    spriteBuilderConfig,
+    sceneObjBuilderConfig,
+    designerSceneConfig
+];
+
+const objects=[
+    animationBuilder,
+    textBuilder,
+    imageBuilder,
     shapeBuilder,
     timerBuilder,
-    spriteBuilderConfig,
     spriteBuilder,
-    sceneObjBuilderConfig,
     sceneObjBuilder,
-    designerSceneConfig,
     designerScene
 ];
 
@@ -56,12 +59,23 @@ require('messagebus').create(function(messageBus) {
     }
   });
 
+  for (var i = config.length - 1; i >= 0; i--) {
+      const func=config[i];
+      messageBus.publish('registerlibrary', '', {
+        Id: applicationId, 
+        javascript: func,
+        isClass: false
+      });
+  };
+  
   for (var i = objects.length - 1; i >= 0; i--) {
       const func=objects[i];
       messageBus.publish('registerlibrary', '', {
-      	Id: applicationId, 
-      	javascript: func
+        Id: applicationId, 
+        javascript: func,
+        isClass: true
       });
   };
+
 
 });
