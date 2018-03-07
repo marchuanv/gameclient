@@ -9,9 +9,14 @@ const textBuilderConfig=require('./lib/config/textBuilder.js');
 const imageBuilderConfig=require('./lib/config/imageBuilder.js');
 const shapeBuilderConfig=require('./lib/config/shapeBuilder.js');
 const designerSceneConfig=require('./lib/config/designerScene.js');
+const phaserConfig=require('./lib/config/phaserGame.js');
+const sceneSelectorConfig=require('./lib/config/sceneSelector.js')
 
 const sceneManager=require('./lib/game/sceneManager.js');
 const sceneObjBuilder=require('./lib/game/sceneObjBuilder.js');
+const sceneEventManager=require('./lib/game/sceneEventManager.js');
+const sceneSelector=require('./lib/game/sceneSelector.js');
+const phaserGame=require('./lib/game/phaserGame.js');
 const spriteBuilder=require('./lib/game/spriteBuilder.js');
 const animationBuilder=require('./lib/game/animationBuilder.js');
 const textBuilder=require('./lib/game/textBuilder.js');
@@ -28,7 +33,9 @@ const config=[
     shapeBuilderConfig,
     spriteBuilderConfig,
     sceneObjBuilderConfig,
-    designerSceneConfig
+    designerSceneConfig,
+    phaserConfig,
+    sceneSelectorConfig
 ];
 
 const objects=[
@@ -41,7 +48,10 @@ const objects=[
     timerBuilder,
     spriteBuilder,
     sceneObjBuilder,
-    cache
+    cache,
+    sceneEventManager,
+    phaserGame,
+    sceneSelector
 ];
 
 require('messagebus').create(function(messageBus) {
