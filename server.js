@@ -19,6 +19,7 @@ const imageBuilder=require('./lib/game/imageBuilder.js');
 const shapeBuilder=require('./lib/game/shapeBuilder.js');
 const timerBuilder=require('./lib/game/timerBuilder.js');
 const designerScene=require('./lib/designer/designerScene.js');
+const cache=require('./node_modules/utils/cache.js');
 
 const config=[
     animationBuilderConfig,
@@ -40,7 +41,7 @@ const objects=[
     timerBuilder,
     spriteBuilder,
     sceneObjBuilder,
-    cache=utils.createCache()
+    cache
 ];
 
 require('messagebus').create(function(messageBus) {
