@@ -11,20 +11,19 @@ const shapeBuilderConfig=require('./lib/config/shapeBuilder.js');
 const designerSceneConfig=require('./lib/config/designerScene.js');
 const phaserConfig=require('./lib/config/phaserGame.js');
 const sceneSelectorConfig=require('./lib/config/sceneSelector.js')
-
+const animationBuilder=require('./lib/game/animationBuilder.js');
+const cache=require('./node_modules/utils/cache.js');
+const designerScene=require('./lib/designer/designerScene.js');
+const imageBuilder=require('./lib/game/imageBuilder.js');
+const phaserGame=require('./lib/game/phaserGame.js');
+const sceneEventManager=require('./lib/game/sceneEventManager.js');
 const sceneManager=require('./lib/game/sceneManager.js');
 const sceneObjBuilder=require('./lib/game/sceneObjBuilder.js');
-const sceneEventManager=require('./lib/game/sceneEventManager.js');
 const sceneSelector=require('./lib/game/sceneSelector.js');
-const phaserGame=require('./lib/game/phaserGame.js');
-const spriteBuilder=require('./lib/game/spriteBuilder.js');
-const animationBuilder=require('./lib/game/animationBuilder.js');
-const textBuilder=require('./lib/game/textBuilder.js');
-const imageBuilder=require('./lib/game/imageBuilder.js');
 const shapeBuilder=require('./lib/game/shapeBuilder.js');
+const spriteBuilder=require('./lib/game/spriteBuilder.js');
+const textBuilder=require('./lib/game/textBuilder.js');
 const timerBuilder=require('./lib/game/timerBuilder.js');
-const designerScene=require('./lib/designer/designerScene.js');
-const cache=require('./node_modules/utils/cache.js');
 
 const config=[
     animationBuilderConfig,
@@ -39,19 +38,19 @@ const config=[
 ];
 
 const objects=[
-    designerScene,
-    sceneManager,
     animationBuilder,
-    textBuilder,
-    imageBuilder,
-    shapeBuilder,
-    timerBuilder,
-    spriteBuilder,
-    sceneObjBuilder,
     cache,
-    sceneEventManager,
+    designerScene,
+    imageBuilder,
     phaserGame,
-    sceneSelector
+    sceneEventManager,
+    sceneManager,
+    sceneObjBuilder,
+    sceneSelector,
+    shapeBuilder,
+    spriteBuilder,
+    textBuilder,
+    timerBuilder
 ];
 
 require('messagebus').create(function(messageBus) {
@@ -60,21 +59,20 @@ require('messagebus').create(function(messageBus) {
     console.log("LIBRARY NOT VALID:",data.javascript);
   });
   messageBus.subscribe('libraryregistered', '', function(data){
-    var registeredLib=data.class;
-    if (registeredLib=="DesignerScene"){
-      
-      messageBus.subscribe('emptyDesignerScene', applicationId, function(data){
-        console.log("EMPTY INSTANCE FOR DesignerScene:",data.class);
-      });
+      var registeredLib=data.class;
+      if (registeredLib=="DesignerScene") {
+        messageBus.subscribe('emptyDesignerScene', applicationId, function(data){
+          console.log("EMPTY INSTANCE FOR DesignerScene:",data.class);
+        });
+        messageBus.subscribe('getDesignerScene', applicationId, function(_data) {
 
-      messageBus.subscribe('getDesignerScene', applicationId, function(_data) {
-        console.log("DESIGNER SCENE INSTANCE:", _data);
-      });
-      
-      messageBus.publish('createDesignerScene', applicationId, {});
-    }
+          _data.create();
+
+          console.log("DESIGNER SCENE INSTANCE:", _data);
+        });
+        messageBus.publish('createDesignerScene', applicationId, {});
+      }
   });
-
   for (var i = config.length - 1; i >= 0; i--) {
       const func=config[i];
       messageBus.publish('registerlibrary', '', {
@@ -83,7 +81,6 @@ require('messagebus').create(function(messageBus) {
         isClass: false
       });
   };
-  
   for (var i = objects.length - 1; i >= 0; i--) {
       const func=objects[i];
       messageBus.publish('registerlibrary', '', {
@@ -92,6 +89,4 @@ require('messagebus').create(function(messageBus) {
         isClass: true
       });
   };
-
-
 });
