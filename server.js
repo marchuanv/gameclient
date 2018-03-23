@@ -11,6 +11,7 @@ const shapeBuilderConfig=require('./lib/config/shapeBuilder.js');
 const designerSceneConfig=require('./lib/config/designerScene.js');
 const phaserConfig=require('./lib/config/phaserGame.js');
 const sceneSelectorConfig=require('./lib/config/sceneSelector.js')
+
 const animationBuilder=require('./lib/game/animationBuilder.js');
 const cache=require('./node_modules/utils/cache.js');
 const designerScene=require('./lib/designer/designerScene.js');
@@ -66,7 +67,6 @@ require('messagebus').create(function(messageBus) {
         });
         messageBus.subscribe('getDesignerScene', applicationId, function(_data) {
 
-          _data.create();
 
           console.log("DESIGNER SCENE INSTANCE:", _data);
         });
