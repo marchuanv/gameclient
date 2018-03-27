@@ -56,10 +56,7 @@
 
 var API = require('messagebus');
 var api = new API();
-api.receiveMessage(function(data){
-    console.log("DATA: ",data);
-});
-api.sendMessage({
+api.registerLibrary({
     javascript: "function SomeClass(){ };",
     isClass: true
 });
