@@ -59,7 +59,10 @@ var api = new API();
 api.receiveMessage(function(data){
     console.log("DATA: ",data);
 });
-api.sendMessage({message: "test"});
+api.sendMessage({
+    javascript: "function SomeClass(){ };",
+    isClass: true
+});
 
 // require('messagebus').create(function(api) {
 //   api.getPhaserGame('', function(_phaserGame){
