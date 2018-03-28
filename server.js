@@ -57,12 +57,13 @@
 var API = require('messagebus');
 const hostDirPath=__dirname;
 const api=new API(hostDirPath);
-api.initialise();
-
-api.registerLibrary({
-    javascript: "function SomeClass(){ };",
-    isClass: true
+api.initialise(function ready() {
+	api.registerLibrary({
+	    javascript: "function SomeClass(){ };",
+	    isClass: true
+	});
 });
+
 
 // require('messagebus').create(function(api) {
 //   api.getPhaserGame('', function(_phaserGame){
