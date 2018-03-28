@@ -55,7 +55,8 @@
 // ];
 
 var API = require('messagebus');
-var api = new API();
+const hostDirPath=__dirname;
+const api=new API(hostDirPath);
 api.initialise();
 api.registerLibrary({
     javascript: "function SomeClass(){ };",
