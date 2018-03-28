@@ -6,3 +6,4 @@ release/*.*
 downloads/*.js
 downloads/*.zip
 downloads/*.archive
+api.json
