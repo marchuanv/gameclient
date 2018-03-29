@@ -51,9 +51,6 @@ const objects=[
 ];
 
 var API = require('messagebus');
-API.prototype.receiveInstance= function (instance) {
-    console.log("INSTANCE: ",instance);    
-}
 
 const hostDirPath=__dirname;
 const api=new API(hostDirPath);
