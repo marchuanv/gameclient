@@ -69,6 +69,12 @@ api.initialise(function ready() {
 		});
 	});
 
+	api.requestInstance({
+	    class: "phaserconfig"
+	},function(instance){
+		console.log("INSTANCE: ", instance);
+	});
+
 });
 
 
