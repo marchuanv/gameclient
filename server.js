@@ -71,16 +71,15 @@ api.initialise(function ready() {
 	});
 
 	api.requestInstance({
-	    class: "PhaserGameConfig"
-	},function(instance){
-		console.log("INSTANCE: ", instance);
+	    class: "PhaserGame"
+	},function(game){
+        api.requestInstance({
+        class: "DesignerScene"
+        },function(designerScene){
+            game.initialise();
+            game.start();
+            designerScene.create();
+        });
 	});
 
 });
-
-
-// require('messagebus').create(function(api) {
-//   api.getPhaserGame('', function(_phaserGame){
-//     console.log('PHASER GAME: ',_phaserGame);
-//   });
-// });
