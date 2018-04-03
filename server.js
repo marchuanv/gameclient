@@ -8,6 +8,7 @@ const designerSceneConfig=require('./lib/config/designerScene.js');
 const phaserConfig=require('./lib/config/phaserGame.js');
 const sceneSelectorConfig=require('./lib/config/sceneSelector.js')
 
+const phaser=require("./lib/game/phaser.js")
 const animationBuilder=require('./lib/game/animationBuilder.js');
 const cache=require('./node_modules/utils/cache.js');
 const designerScene=require('./lib/designer/designerScene.js');
@@ -35,6 +36,7 @@ const config=[
 ];
 
 const objects=[
+    phaser,
     animationBuilder,
     cache,
     designerScene,
