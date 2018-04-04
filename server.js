@@ -75,13 +75,13 @@ api.initialise(function ready() {
 	api.requestInstance({
 	    class: "PhaserGame"
 	},function(game){
-        api.requestInstance({
-        class: "DesignerScene"
-        },function(designerScene){
-            game.initialise();
-            game.start();
-            designerScene.create();
-        });
+        game.initialise();
+        game.start();
+        // api.requestInstance({
+        // class: "DesignerScene"
+        // },function(designerScene){
+        //     designerScene.create();
+        // });
 	});
 
 });
