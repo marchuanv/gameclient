@@ -1,7 +1,11 @@
+reset
+
 git pull origin master
+npm install
+npm update
+npm run minify
 git add -A
 git commit -m "fix"
 git push origin master
-git clean -fdx
-npm install
-npm update
+
+npm start
